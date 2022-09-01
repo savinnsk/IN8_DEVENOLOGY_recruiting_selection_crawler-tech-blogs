@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "api to save your favorite blogs",
   "license": "MIT",
-  "main": "app.ts",
+  "main": "server.ts",
   "scripts": {
-    "dev": "",
+    "dev": "ts-node-dev src/shared/infra/http/server.ts",
     "start": ""
   },
   "dependencies": {
