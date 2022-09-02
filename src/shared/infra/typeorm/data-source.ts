@@ -5,7 +5,7 @@ import { DataSource } from "typeorm"
 import { CreateUser1662114653369 } from "./migrations/1662114653369-CreateUser";
 import { User } from "../../../modules/users/infra/typeorm/entity/User";
 
-export const AppDataSource = new DataSource({
+ const AppDataSource = new DataSource({
     type: 'postgres',
     host: process.env.ORM_HOST,
     port: 5432,
@@ -18,3 +18,5 @@ export const AppDataSource = new DataSource({
     migrations: [CreateUser1662114653369],
     subscribers: [],
 })
+
+export {AppDataSource}
