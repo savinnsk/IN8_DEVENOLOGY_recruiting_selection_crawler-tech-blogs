@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+import { User } from "../infra/typeorm/entity/User";
 import { IUsersRepository } from "../interfaces/IUsersRepository";
 
 @injectable()
