@@ -13,8 +13,16 @@ class UsersRepository implements IUsersRepository{
         this.repository = AppDataSource.getRepository(User)
     }
 
-    create(name: string, password: string): Promise<User> {
-        throw new Error("Method not implemented.");
+    async create(name: string, password: string): Promise<User> {
+
+        const user = this.repository.create({
+            name,
+            password
+        })
+
+        await this.repository.save(user)
+
+        return user
     }
 
 } 
