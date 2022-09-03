@@ -1,3 +1,4 @@
+
 import { Router } from "express";
 import { CreateUserController } from "../../../../modules/users/usecases/CreateUserController";
 const UsersRoutes = Router();

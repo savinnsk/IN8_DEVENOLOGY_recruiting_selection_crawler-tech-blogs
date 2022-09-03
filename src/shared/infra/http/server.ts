@@ -1,5 +1,6 @@
 import {app} from "./app"
 
+import "./../../container"
 
 import { AppDataSource } from "../typeorm/data-source"
 

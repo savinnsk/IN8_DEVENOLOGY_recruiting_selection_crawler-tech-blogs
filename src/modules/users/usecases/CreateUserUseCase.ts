@@ -13,9 +13,15 @@ class CreateUserUseCase {
 
     async execute(name : string , password : string) : Promise<string>{
 
+        try{
+
         const user = await this.usersRepository.create(name , password);
 
         return user.name
+        
+        }catch(err){
+            console.log(err)
+        }
     }
 }
 
