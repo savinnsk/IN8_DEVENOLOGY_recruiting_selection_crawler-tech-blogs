@@ -1,4 +1,4 @@
-import { User } from "../entity/User";
+import { User } from "../infra/typeorm/entity/User";
 //import { UserDTO } from "./UserDTOr";
 
 export interface IUsersRepository {

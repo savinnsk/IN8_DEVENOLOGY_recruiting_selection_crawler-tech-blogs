@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../../../../../shared/infra/typeorm/data-source";
 import { User } from "../entity/User";
-import { IUsersRepository } from "../interfaces/IUsersRepository";
+import { IUsersRepository } from "../../../interfaces/IUsersRepository";
 
 
 
