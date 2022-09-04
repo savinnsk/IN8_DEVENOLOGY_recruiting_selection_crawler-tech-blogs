@@ -8,7 +8,7 @@ interface IPayload {
 }
 
 export async function ensureUserAuthenticated(
-  request: Request,
+  request: any,
   response: Response,
   next: NextFunction
 ) {
