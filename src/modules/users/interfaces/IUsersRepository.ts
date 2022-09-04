@@ -3,4 +3,5 @@ import { User } from "../infra/typeorm/entity/User";
 
 export interface IUsersRepository {
     create(name : string , password : string): Promise<User>
+    findByName(name : string) : Promise<User>
 }
