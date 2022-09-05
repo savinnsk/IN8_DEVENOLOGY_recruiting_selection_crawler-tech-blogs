@@ -7,7 +7,7 @@ class EditBookMarkController{
     async handle(request , response : Response) : Promise<Response>{
 
         const user_id = request.user.id
-        const {bookmark_id} = request.params
+        const bookmark_id = request.params.id
         const {title} = request.body
 
         const editBookMarkUseCase = container.resolve(EditBookMarkUseCase);
