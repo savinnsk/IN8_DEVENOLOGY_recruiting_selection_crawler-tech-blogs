@@ -4,7 +4,7 @@ import { Bookmark } from "../../infra/entity/Bookmark";
 import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository";
 
 @injectable()
-class listAllBookmarksUserUseCase {
+class ListAllBookmarksUserUseCase {
 
     constructor(
         @inject("BookmarkRepository")
@@ -28,4 +28,4 @@ class listAllBookmarksUserUseCase {
     }
 }
 
-export {listAllBookmarksUserUseCase}
+export {ListAllBookmarksUserUseCase}
