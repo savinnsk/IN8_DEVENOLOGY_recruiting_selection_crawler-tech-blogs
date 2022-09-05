@@ -12,7 +12,7 @@ export class CreateBookmarksLinks1662304783282 implements MigrationInterface {
                     type:"varchar"
                 },
                 {
-                    name:"title",
+                    name:"link",
                     type:"varchar"
                 },
                 {

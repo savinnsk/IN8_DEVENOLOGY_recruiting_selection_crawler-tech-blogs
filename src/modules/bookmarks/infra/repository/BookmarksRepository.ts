@@ -12,9 +12,10 @@ class BookmarksLinksRepository implements IBookmarksRepository{
         this.repository = AppDataSource.getRepository(Bookmark)
     }
 
-    async create(user_id: string, title: string): Promise<Bookmark> {
+    async create(user_id: string, link: string , label : string): Promise<Bookmark> {
        const bookmark = this.repository.create({
-        title,
+        link,
+        label,
         user_id : user_id
        })
             
@@ -42,12 +43,13 @@ class BookmarksLinksRepository implements IBookmarksRepository{
       return bookmarks;
     }
     
-    async edit(id: string , bookmark_name : string): Promise<void> {
+    async edit(id: string ,link : string , label : string): Promise<void> {
         await this.repository
         .createQueryBuilder()
         .update(Bookmark)
         .set({
-          title: `${bookmark_name}`
+          link: `${link}`,
+          label: `${label}`
         })
         .where("id = :id", {
           id,

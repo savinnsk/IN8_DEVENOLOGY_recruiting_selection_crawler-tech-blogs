@@ -12,7 +12,7 @@ class Bookmark {
     label: string
 
     @Column()
-    title : string
+    link : string
 
     @Column()
     user_id : string
