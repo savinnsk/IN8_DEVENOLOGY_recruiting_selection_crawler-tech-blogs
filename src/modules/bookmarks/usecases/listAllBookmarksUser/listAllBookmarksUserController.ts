@@ -12,6 +12,7 @@ class ListAllBookmarksUserController {
 
         const bookmarks = await listAllBookmarksUserUseCase.execute(user_id)
 
+
         return response.status(200).json({
             bookmarks:bookmarks
         })

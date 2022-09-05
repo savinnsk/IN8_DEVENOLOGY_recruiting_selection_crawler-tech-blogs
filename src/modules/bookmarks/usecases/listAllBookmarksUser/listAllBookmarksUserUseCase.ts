@@ -7,7 +7,7 @@ import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository
 class ListAllBookmarksUserUseCase {
 
     constructor(
-        @inject("BookmarkRepository")
+        @inject("BookmarksRepository")
         private bookmarksRepository : IBookmarksRepository,
         @inject("UsersRepository")
         private usersRepository : IUsersRepository
