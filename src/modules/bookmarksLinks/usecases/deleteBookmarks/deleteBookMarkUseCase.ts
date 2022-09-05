@@ -5,7 +5,7 @@ import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository
 @injectable()
 class DeleteBookMarkUseCase{
     constructor(
-        @inject("BookMarksRepository")
+        @inject("BookmarksRepository")
         private bookmarksRepository : IBookmarksRepository,
         @inject("UsersRepository")
         private usersRepository : IUsersRepository
