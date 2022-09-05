@@ -31,8 +31,13 @@ class BookmarksLinksRepository implements IBookmarksRepository{
         throw new Error("Method not implemented.");
     }
     
-    async delete(bookmarks_id: string, user_id: string): Promise<BookmarksLinks> {
-        throw new Error("Method not implemented.");
+    async delete(bookmarks_id: string) : Promise<void>{
+       await this.repository
+      .createQueryBuilder()
+      .delete()
+      .from(BookmarksLinks)
+      .where("id= :id", { bookmarks_id })
+      .execute();
     }
     
 }
