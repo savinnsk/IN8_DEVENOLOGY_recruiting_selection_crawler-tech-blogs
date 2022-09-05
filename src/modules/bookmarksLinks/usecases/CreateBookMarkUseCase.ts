@@ -1,7 +1,5 @@
 import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../users/interfaces/IUsersRepository";
-import { BookmarksLinks } from "../infra/entity/BookmarksLinks";
-import { BookmarksLinksRepository } from "../infra/repository/BookmarksLinksRepository";
 import { IBookmarksRepository } from "../interfaces/IBookmarksLinksRepository";
 
 @injectable()
@@ -10,6 +8,8 @@ class CreateBookMarkUseCase {
     constructor(
         @inject("BookmarksRepository")
         private bookmarksLinksRepository :  IBookmarksRepository,
+
+        @inject("UsersRepository")
         private usersRepository : IUsersRepository
     ){}
 

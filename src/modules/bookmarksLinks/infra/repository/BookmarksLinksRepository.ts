@@ -13,7 +13,14 @@ class BookmarksLinksRepository implements IBookmarksRepository{
     }
 
     async create(user_id: string, title: string): Promise<BookmarksLinks> {
-        throw new Error("Method not implemented.");
+       const bookmark = this.repository.create({
+        title,
+        user_id : user_id
+       })
+            
+      this.repository.save(bookmark)
+
+       return bookmark
     }
      
     async getAll(user_id: string): Promise<[]> {

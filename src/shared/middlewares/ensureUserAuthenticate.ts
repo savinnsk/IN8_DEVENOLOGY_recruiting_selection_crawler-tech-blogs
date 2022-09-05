@@ -1,7 +1,7 @@
 import "dotenv"
 import { Request, Response, NextFunction } from "express";
 import { verify } from "jsonwebtoken";
-import { UsersRepository } from "../../modules/users/infra/typeorm/repositories/UsersRepository.js";
+import { UsersRepository } from "../../modules/users/infra/typeorm/repositories/UsersRepository";
 
 interface IPayload {
   sub: string;
