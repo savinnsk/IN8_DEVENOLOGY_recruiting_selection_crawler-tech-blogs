@@ -11,6 +11,6 @@ container.registerSingleton<IUsersRepository>(
 
 
 container.registerSingleton<IBookmarksRepository>(
-    "BookmarksReposioty",
+    "BookmarksRepository",
     BookmarksLinksRepository
 )
