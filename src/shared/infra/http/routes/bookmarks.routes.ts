@@ -11,7 +11,7 @@ const deleteBookmarkController = new DeleteBookmarkController()
 const editBookMarkController = new EditBookMarkController()
 
 bookmarksRoutes.post("/create" , ensureUserAuthenticated,createBookMarkController.handle)
-bookmarksRoutes.delete("/delete" , ensureUserAuthenticated , deleteBookmarkController.handle)
-bookmarksRoutes.put("/edit" , ensureUserAuthenticated ,editBookMarkController.handle )
+bookmarksRoutes.delete("/delete/:id" , ensureUserAuthenticated , deleteBookmarkController.handle)
+bookmarksRoutes.put("/edit/:id" , ensureUserAuthenticated ,editBookMarkController.handle )
 
 export {bookmarksRoutes}
