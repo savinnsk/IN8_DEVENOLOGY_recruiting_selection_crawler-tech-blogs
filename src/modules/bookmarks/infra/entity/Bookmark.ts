@@ -9,6 +9,9 @@ class Bookmark {
     id: string
 
     @Column()
+    label: string
+
+    @Column()
     title : string
 
     @Column()
