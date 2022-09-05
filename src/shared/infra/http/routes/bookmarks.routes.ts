@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { CreateBookMarkController } from "../../../../modules/bookmarksLinks/usecases/createBookMark/CreateBookMarkController";
-import { DeleteBookmarkController } from "../../../../modules/bookmarksLinks/usecases/deleteBookmarks/deleteBookMarkController";
-import { EditBookMarkController } from "../../../../modules/bookmarksLinks/usecases/editBookMark/EditBookMarkController";
+import { CreateBookMarkController } from "../../../../modules/bookmarks/usecases/createBookMark/CreateBookMarkController";
+import { DeleteBookmarkController } from "../../../../modules/bookmarks/usecases/deleteBookmarks/deleteBookMarkController";
+import { EditBookMarkController } from "../../../../modules/bookmarks/usecases/editBookMark/EditBookMarkController";
 import { ensureUserAuthenticated } from "../../../middlewares/ensureUserAuthenticate";
 
 const bookmarksRoutes = Router()

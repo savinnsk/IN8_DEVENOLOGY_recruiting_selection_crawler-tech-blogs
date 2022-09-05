@@ -5,7 +5,7 @@ import { DataSource } from "typeorm"
 import { CreateUser1662114653369 } from "./migrations/1662114653369-CreateUser";
 import { User } from "../../../modules/users/infra/typeorm/entity/User";
 import { CreateBookmarksLinks1662304783282 } from "./migrations/1662304783282-CreateBookmarksLinks";
-import { Bookmark } from "../../../modules/bookmarksLinks/infra/entity/Bookmark";
+import { Bookmark } from "../../../modules/bookmarks/infra/entity/Bookmark";
 
  const AppDataSource = new DataSource({
     type: 'postgres',
