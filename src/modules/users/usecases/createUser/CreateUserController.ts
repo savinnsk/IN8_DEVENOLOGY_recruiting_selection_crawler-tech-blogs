@@ -4,7 +4,9 @@ import { CreateUserUseCase } from "./CreateUserUseCase";
 
 class CreateUserController{
 
-    async handle(request : Request , response : Response):Promise<Response>{
+    async handle(request : Request , response : Response):Promise<any>{
+
+    try{
 
         const {name , password} = request.body
 
@@ -15,6 +17,10 @@ class CreateUserController{
         return response.status(201).json({
             message : `${user.name} was created with success`
         })
+
+    }catch(err){
+        throw new Error("Server Error")
+    }
 
     }
 }
