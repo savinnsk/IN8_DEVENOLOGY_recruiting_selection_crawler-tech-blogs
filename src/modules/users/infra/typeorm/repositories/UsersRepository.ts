@@ -33,7 +33,7 @@ class UsersRepository implements IUsersRepository{
 
     async create(name: string, password: string): Promise<User> {
 
-        const user = this.repository.create({
+        const user = await this.repository.create({
             name,
             password
         })
