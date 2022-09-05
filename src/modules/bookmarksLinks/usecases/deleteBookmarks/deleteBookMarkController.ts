@@ -1,4 +1,4 @@
-import { Response } from "express";
+import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { DeleteBookMarkUseCase } from "./deleteBookMarkUseCase";
 
@@ -6,7 +6,7 @@ class DeleteBookmarkController {
     
     async handle(request , response : Response){
 
-        const {bookmark_id } = request.body
+        const {bookmark_id } = request.params
         const user_id = request.user.id
 
         const deleteBookMarkUseCase = container.resolve(DeleteBookMarkUseCase)
