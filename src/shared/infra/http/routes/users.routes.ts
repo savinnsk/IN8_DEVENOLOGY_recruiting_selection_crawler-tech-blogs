@@ -11,8 +11,9 @@ UsersRoutes.get("/create" , (request : Request , response : Response)=>{
     response.render("users/create")
 })
 
+
 UsersRoutes.post("/create" , 
 upload.fields([{ name: 'name', password : 'password' }]),
- createUserController.handle)
+ createUserController.handle )
 
 export {UsersRoutes}
