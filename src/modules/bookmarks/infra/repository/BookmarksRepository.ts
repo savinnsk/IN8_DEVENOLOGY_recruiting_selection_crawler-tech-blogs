@@ -32,7 +32,7 @@ class BookmarksLinksRepository implements IBookmarksRepository{
         return bookmark
     }
 
-    async getAll(user_id: string): Promise<[]> {
+    async getAll(user_id: string): Promise<Bookmark[]> {
         throw new Error("Method not implemented.");
     }
     
