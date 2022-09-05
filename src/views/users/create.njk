@@ -7,7 +7,18 @@
 
 {% block content %}
    
+  <form method="POST" action="/users/create"  enctype="multipart/form-data">
+      
+      <div>
+        <span>create a nickname</span><input  name="name" type="text">
+      </div>
 
-  <p>test</p>
+       <div>
+        <span>create a password</span><input name="password" type="text" >
+      </div>
+
+      <button type="submit">create</button>
+  
+  </form>
     
  {% endblock %}
