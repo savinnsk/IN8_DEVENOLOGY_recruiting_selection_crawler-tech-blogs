@@ -33,7 +33,13 @@ class BookmarksLinksRepository implements IBookmarksRepository{
     }
 
     async getAll(user_id: string): Promise<Bookmark[]> {
-        throw new Error("Method not implemented.");
+        const bookmarks = await this.repository.find({
+            where:{
+                user_id : user_id
+            }
+    })
+  
+      return bookmarks;
     }
     
     async edit(id: string , bookmark_name : string): Promise<void> {
