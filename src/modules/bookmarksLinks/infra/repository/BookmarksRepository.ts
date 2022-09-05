@@ -40,12 +40,12 @@ class BookmarksLinksRepository implements IBookmarksRepository{
         throw new Error("Method not implemented.");
     }
     
-    async delete(bookmarks_id: string) : Promise<void>{
+    async delete(id: string) : Promise<void>{
        await this.repository
       .createQueryBuilder()
       .delete()
       .from(Bookmark)
-      .where("id= :id", { bookmarks_id })
+      .where("id= :id", { id })
       .execute();
     }
     

@@ -11,7 +11,7 @@ class DeleteBookmarkController {
 
         const deleteBookMarkUseCase = container.resolve(DeleteBookMarkUseCase)
 
-        deleteBookMarkUseCase.execute(user_id , bookmark_id)
+        await deleteBookMarkUseCase.execute(user_id , bookmark_id)
 
         return response.status(201).json({
             message:"bookmark was deleted with success"
