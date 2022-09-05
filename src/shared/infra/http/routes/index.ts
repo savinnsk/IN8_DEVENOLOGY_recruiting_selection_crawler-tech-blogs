@@ -4,13 +4,7 @@ import { UsersRoutes } from "./users.routes"
 import { authenticateRoutes } from "./authenticate.routes"
 import { bookmarksRoutes } from "./bookmarks.routes"
 
-
-
 const router = Router()
-
-router.get("/" ,(request : Request, response : Response) =>{
-    response.render("index")
-})
 
 router.use("/users" , UsersRoutes)
 router.use("/sessions" , authenticateRoutes)

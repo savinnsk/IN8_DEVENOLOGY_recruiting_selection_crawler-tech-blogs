@@ -7,10 +7,6 @@ const authenticateRoutes = Router()
 
 const authenticateUserController = new AuthenticateUserController()
 
-authenticateRoutes.get("/", (request : Request , response : Response ) =>{
-    
-    response.render("login")
-})
 authenticateRoutes.post('/' , 
 upload.fields([{ name: 'name', password : 'password' }]),
 authenticateUserController.handle)
