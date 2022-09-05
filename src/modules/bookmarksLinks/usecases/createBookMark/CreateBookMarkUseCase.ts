@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { IUsersRepository } from "../../users/interfaces/IUsersRepository";
-import { IBookmarksRepository } from "../interfaces/IBookmarksLinksRepository";
+import { IUsersRepository } from "../../../users/interfaces/IUsersRepository";
+import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository";
 
 @injectable()
 class CreateBookMarkUseCase {

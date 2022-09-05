@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { CreateBookMarkUseCase } from "./CreateBookMarkUseCase";
 
+
 class CreateBookMarkController{
 
     async handle(request  , response : Response) {

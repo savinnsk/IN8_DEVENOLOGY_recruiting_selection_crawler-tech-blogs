@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { User } from "../../../users/infra/typeorm/entity/User";
 
 @Entity("bookmarks-links")
-class BookmarksLinks {
+class Bookmark {
 
     @PrimaryColumn()
     id: string
@@ -31,4 +31,4 @@ class BookmarksLinks {
 }
 
 
-export {BookmarksLinks}
+export {Bookmark}

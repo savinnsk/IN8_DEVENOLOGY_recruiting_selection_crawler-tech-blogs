@@ -5,7 +5,7 @@ import { DataSource } from "typeorm"
 import { CreateUser1662114653369 } from "./migrations/1662114653369-CreateUser";
 import { User } from "../../../modules/users/infra/typeorm/entity/User";
 import { CreateBookmarksLinks1662304783282 } from "./migrations/1662304783282-CreateBookmarksLinks";
-import { BookmarksLinks } from "../../../modules/bookmarksLinks/infra/entity/BookmarksLinks";
+import { Bookmark } from "../../../modules/bookmarksLinks/infra/entity/Bookmark";
 
  const AppDataSource = new DataSource({
     type: 'postgres',
@@ -16,7 +16,7 @@ import { BookmarksLinks } from "../../../modules/bookmarksLinks/infra/entity/Boo
     database: process.env.ORM_DATABASE,
     synchronize: true,
     logging: false,
-    entities: [User ,BookmarksLinks],
+    entities: [User ,Bookmark],
     migrations: [
         CreateUser1662114653369,
         CreateBookmarksLinks1662304783282
