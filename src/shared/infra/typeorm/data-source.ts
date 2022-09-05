@@ -6,6 +6,7 @@ import { CreateUser1662114653369 } from "./migrations/1662114653369-CreateUser";
 import { User } from "../../../modules/users/infra/typeorm/entity/User";
 import { CreateBookmarksLinks1662304783282 } from "./migrations/1662304783282-CreateBookmarksLinks";
 import { Bookmark } from "../../../modules/bookmarks/infra/entity/Bookmark";
+import { alterBookmarksAddTitle1662416445178 } from "./migrations/1662416445178-alterBookmarksAddTitle";
 
  const AppDataSource = new DataSource({
     type: 'postgres',
@@ -19,7 +20,8 @@ import { Bookmark } from "../../../modules/bookmarks/infra/entity/Bookmark";
     entities: [User ,Bookmark],
     migrations: [
         CreateUser1662114653369,
-        CreateBookmarksLinks1662304783282
+        CreateBookmarksLinks1662304783282,
+        alterBookmarksAddTitle1662416445178
     ],
     subscribers: [],
 })

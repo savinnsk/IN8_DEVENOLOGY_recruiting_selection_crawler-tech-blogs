@@ -72,7 +72,7 @@ ORM_DATABASE=api-fav-blogs
 ## ENDPOINTS
 
 
-**Desenvolvido por:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
+**Developed for:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
 
 
 ## 📝 License
