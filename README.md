@@ -41,6 +41,7 @@ git clone https://github.com/savinnsk/fav-blog-links.git && cd fav-blog-links
 
 ```bash
 # Install the dependencies
+
 $ yarn
 
 # Make a copy of '.env.example' to '.env'
@@ -48,10 +49,12 @@ $ yarn
 
 $ cp .env.example .env
 
+$ SHOULD HAVE A DATABASE CALLED api-fav-blogs
+
 # Once the services are running, run the migrations
 $ yarn migration:run
 
-#  SHOULD HAVE A DATABASE CALLED api-fav-blogs
+
 
 # Start all the services and the application with Docker Compose
 $ docker-compose up -d
