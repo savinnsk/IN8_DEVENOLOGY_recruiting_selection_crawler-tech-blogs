@@ -28,7 +28,7 @@
 
 Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button.
 
-To Run test use the script:
+To Run tests, use the script:
 
 ```zsh
     yarn jest
