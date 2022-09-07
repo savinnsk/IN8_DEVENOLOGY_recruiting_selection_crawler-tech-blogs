@@ -2,6 +2,8 @@
 
 **description:** api created to make a bookmark for technologies links
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=api-FavLinks&uri=https%3A%2F%2Fgithub.com%2Fsavinnsk%2Fapi-fav-blog-links%2Fblob%2Fmain%2Finsomia.json)
+
 ### status : (developing)
 
 ## technologies used
@@ -18,16 +20,10 @@
 
 ## How to Download and Run the project
 
-#### Required:
-
-- [Docker](https://www.docker.com/)
-
-- **Table Data Base required "api-fav-blogs"**
-
-
 ## 💻 Getting started
 
 Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button.
+
 
 ### Requirements
 
@@ -52,11 +48,14 @@ $ yarn
 
 $ cp .env.example .env
 
+# Once the services are running, run the migrations
+$ yarn migration:run
+
+#  SHOULD HAVE A DATABASE CALLED api-fav-blogs
+
 # Start all the services and the application with Docker Compose
 $ docker-compose up -d
 
-# Once the services are running, run the migrations
-$ yarn migration:run
 
 
 # Well done, project is started!
@@ -65,10 +64,17 @@ $ yarn migration:run
 ####  example env variables..
 
 ```zsh
+#ORM AND DATABASE
+
 ORM_USERNAME=postgres
 ORM_HOST=localhost
 ORM_PASSWORD=admin
 ORM_DATABASE=api-fav-blogs
+
+
+#AUTHENTICATE JWT
+
+USER_SECRET_TOKEN=batata
 ```
 
 ## USER ENDPOINTS
