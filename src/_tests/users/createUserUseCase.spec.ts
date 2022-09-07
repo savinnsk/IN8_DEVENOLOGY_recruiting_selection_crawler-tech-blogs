@@ -1,26 +1,24 @@
+import "reflect-metadata"
+
+import { CreateUserUseCase } from "../../modules/users/usecases/createUser/CreateUserUseCase"
+import { UsersRepositoryInMemory } from "./usersRepositoryInMemory/usersRepositoryInMemory"
 
 
 
-let carsRepositoryInMemory = new CarsRepositoryInMemory()
-let createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory)
+let usersRepositoryInMemory = new UsersRepositoryInMemory
+let createUserUseCase = new CreateUserUseCase(usersRepositoryInMemory)
 
 
-describe("create car" , () => {
+describe("create user" , () => {
 
-    it("should be able to create a new car" , async() =>{
+    it("should be able to create a new user" , async() =>{
 
-       const car = await createCarUseCase.execute(
-            {
-                name : "Name car",
-                description : "Description car",
-                daily_rate : 123,
-                lincense_plate : "1234",
-                fine_amount : 123,
-                brand : "Brand car",
-                category_id : "category_id"
-            })
+       const user = await createUserUseCase.execute(
+                "Name car",
+                "new password"
+            )
 
-            expect(car).toHaveProperty("id")
+            expect(user).toHaveProperty("id")
     })
 
 })
