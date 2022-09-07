@@ -16,6 +16,7 @@ class ListAllBookmarksUserUseCase {
 
     async execute(user_id : string) : Promise<Bookmark[]>{
 
+        
         const user = await this.usersRepository.findById(user_id);
 
         if(!user){

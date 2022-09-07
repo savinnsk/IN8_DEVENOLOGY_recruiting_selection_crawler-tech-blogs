@@ -14,6 +14,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Jwt]
 - [tsrynge]
+- [Jest]
 
 ## How to Download and Run the project
 
@@ -79,9 +80,9 @@ method: POST
 
 request required :
 
-- type : body 
+**request body** 
 
-- fields : {
+- properties : {
 
     - name : string 
     - password : string     
@@ -115,9 +116,9 @@ method: POST
 
 request required :
 
-- type : body 
+**request body**
 
-- fields : {
+- properties : {
     
     - name : string 
     - password : string     
@@ -145,22 +146,32 @@ Bad Response:
 
 ## Bookmarks endpoint
 
+
+**Create a new bookmark**
+
 endpoint: http://localhost:5000/bookmarks/create
 
 method: POST
 
-**Authentication required**
+__Authentication required__
 
 request required :
 
-- token type : jsonwebtoken 
+**request headers**
 
-- type : body 
+- token
 
-- fields : {
-    
-    - label : string 
-    - link : string     
+    -type : jsonwebtoken 
+
+
+**request body** 
+
+    - properties {
+
+         - label : string 
+         - link : string   
+    }     
+
 }
 
 Success Response:
@@ -169,6 +180,132 @@ Success Response:
 
 - content: {
     - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
+
+
+**Delete a bookmark**
+
+endpoint: http://localhost:5000/bookmarks/delete/{id}
+
+method: DELETE
+
+__Authentication required__
+
+request required :
+
+**request headers**
+
+- token
+
+    -type : jsonwebtoken 
+
+**request params**
+
+- id
+
+
+**request params**
+
+    - property : id    
+
+
+Success Response:
+
+- code:  201
+
+- content: {
+    - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
+
+
+**Edit a bookmark**
+
+endpoint: http://localhost:5000/bookmarks/edit/{id}
+
+method: PUT
+
+__Authentication required__
+
+request required :
+
+**request headers**
+
+- token
+
+    -type : jsonwebtoken 
+
+
+**request params**
+
+- id
+
+**request body** 
+
+    - properties {
+
+         - label : string 
+         - link : string   
+    }     
+
+Success Response:
+
+- code:  201
+
+- content: {
+    - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
+
+
+**Get All bookmarks**
+
+endpoint: http://localhost:5000/bookmarks/list
+
+method: GET
+
+__Authentication required__
+
+request required :
+
+**request headers**
+
+- token
+
+    -type : jsonwebtoken 
+    
+
+Success Response:
+
+- code:  201
+
+- content: {
+    - message of success (all bookmarks)
     }
 
 
