@@ -8,7 +8,7 @@ class Bookmark {
     @PrimaryColumn()
     id: string
 
-    @Column()
+    @Column({nullable:true})
     label: string
 
     @Column()

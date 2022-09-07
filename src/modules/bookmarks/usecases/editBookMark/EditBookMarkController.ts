@@ -8,14 +8,14 @@ class EditBookMarkController{
 
         const user_id = request.user.id
         const bookmark_id = request.params.id
-        const {title} = request.body
+        const {label , link} = request.body
 
         const editBookMarkUseCase = container.resolve(EditBookMarkUseCase);
 
-        await editBookMarkUseCase.execute(user_id , bookmark_id , title)
+        await editBookMarkUseCase.execute(user_id , bookmark_id , label , link)
 
         return response.status(201).json({
-            message:`${title} was edited with success`
+            message:`${link} was edited with success`
         })
     }
 }

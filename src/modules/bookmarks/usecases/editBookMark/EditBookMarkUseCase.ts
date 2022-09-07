@@ -12,7 +12,7 @@ class EditBookMarkUseCase {
         private usersRepository : IUsersRepository
     ){}
 
-    async execute(user_id : string, bookmark_id : string , title : string) : Promise<void>{
+    async execute(user_id : string, bookmark_id : string , label : string , link:string) : Promise<void>{
 
         const bookmark = await this.bookmarksRepository.findById(bookmark_id);
         const user = await this.usersRepository.findById(user_id);
@@ -25,7 +25,7 @@ class EditBookMarkUseCase {
             throw new Error("Bookmark invalid")
         }
 
-        await this.bookmarksRepository.edit(bookmark_id,title)
+        await this.bookmarksRepository.edit(bookmark_id,label , link)
     }
 }
 

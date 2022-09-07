@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { User } from "../../infra/typeorm/entity/User";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
+import {hash} from "bcrypt"
 
 @injectable()
 class CreateUserUseCase {
@@ -17,8 +18,9 @@ class CreateUserUseCase {
 
         //const userAlreadyExists = await this.usersRepository.findByName(name)
         
-
-        const user = await this.usersRepository.create(name , password);
+        const passwordHash = await hash(password , 8)
+        
+        const user = await this.usersRepository.create(name , passwordHash);
 
         return user
         

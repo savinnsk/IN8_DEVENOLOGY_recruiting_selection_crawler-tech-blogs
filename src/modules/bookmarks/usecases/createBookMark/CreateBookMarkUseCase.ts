@@ -13,7 +13,7 @@ class CreateBookMarkUseCase {
         private usersRepository : IUsersRepository
     ){}
 
-    async execute(user_id: string , title : string ) : Promise<string>{
+    async execute(user_id: string , label : string , link : string ) : Promise<string>{
 
         const user = await this.usersRepository.findById(user_id);
 
@@ -21,9 +21,9 @@ class CreateBookMarkUseCase {
             throw new Error("User doesn't exists")
         }
 
-        const bookmark = await this.bookmarksLinksRepository.create(user_id , title)
+        const bookmark = await this.bookmarksLinksRepository.create(user_id , link ,label)
 
-        return bookmark.title
+        return bookmark.link
 
     }
 }

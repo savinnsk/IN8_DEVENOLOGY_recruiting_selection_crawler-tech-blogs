@@ -8,8 +8,7 @@ export class alterBookmarksAddTitle1662416445178 implements MigrationInterface {
             "bookmarks-links",
             new TableColumn({
             name: "label",
-            type: "varchar",
-            isNullable: true
+            type: "varchar"
           })
          );
     }
