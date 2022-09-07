@@ -7,17 +7,23 @@ class CreateBookMarkController{
 
     async handle(request  , response : Response) {
     
-    const user_id = request.user.id
-    const {link , label} = request.body    
-        
-    const createBookMarkUseCase = container.resolve(CreateBookMarkUseCase)
+    try{
+        const user_id = request.user.id
+        const {link , label} = request.body    
+            
+        const createBookMarkUseCase = container.resolve(CreateBookMarkUseCase)
 
-    const bookmark = await createBookMarkUseCase.execute(user_id , link , label)
+        const bookmark = await createBookMarkUseCase.execute(user_id , link , label)
 
-    return response.status(201).json({
-        message:`bookmark ${bookmark} was created with success`
+        return response.status(201).json({
+            message:`bookmark ${bookmark} was created with success`
     })
 
+    }catch{
+
+        return response.status(400).send(new Error("Server Error"))
+
+    }
 
     }
 }

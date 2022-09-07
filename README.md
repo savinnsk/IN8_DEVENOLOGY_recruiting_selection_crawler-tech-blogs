@@ -69,8 +69,116 @@ ORM_PASSWORD=admin
 ORM_DATABASE=api-fav-blogs
 
 
-## ENDPOINTS
+## USER ENDPOINTS
 
+**create a new user**
+
+endpoint: http://localhost:5000/users/create
+
+method: POST
+
+request required :
+
+- type : body 
+
+- fields : {
+
+    - name : string 
+    - password : string     
+}
+
+Success Response:
+
+- code:  200
+
+- content: {
+    - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
+
+
+
+**Authentication user**
+
+
+endpoint: http://localhost:5000/sessions
+
+method: POST
+
+request required :
+
+- type : body 
+
+- fields : {
+    
+    - name : string 
+    - password : string     
+}
+
+Success Response:
+
+- code:  200
+
+- content: {
+    - token authentication
+    - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
+
+
+
+## Bookmarks endpoint
+
+endpoint: http://localhost:5000/bookmarks/create
+
+method: POST
+
+**Authentication required**
+
+request required :
+
+- token type : jsonwebtoken 
+
+- type : body 
+
+- fields : {
+    
+    - label : string 
+    - link : string     
+}
+
+Success Response:
+
+- code:  201
+
+- content: {
+    - message of success
+    }
+
+
+Bad Response:
+
+- code : 400
+
+- content: {
+    - message of failure 
+    }
 
 **Developed for:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
 
