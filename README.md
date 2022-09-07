@@ -2,6 +2,8 @@
 
 **description:** api created to make a bookmark for technologies links
 
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=api-FavLinks&uri=https%3A%2F%2Fgithub.com%2Fsavinnsk%2Fapi-fav-blog-links%2Fblob%2Fmain%2Finsomia.json)
+
 ### status : (developing)
 
 ## technologies used
@@ -22,12 +24,15 @@
 
 - [Docker](https://www.docker.com/)
 
-- **Table Data Base required "api-fav-blogs"**
-
-
 ## 💻 Getting started
 
 Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button.
+
+To Run test use the script:
+
+```zsh
+    yarn jest
+```
 
 ### Requirements
 
