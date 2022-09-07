@@ -64,23 +64,27 @@ $ yarn migration:run
 
 ####  example env variables..
 
+```bash
 ORM_USERNAME=postgres
 ORM_HOST=localhost
 ORM_PASSWORD=admin
 ORM_DATABASE=api-fav-blogs
-
+```
 
 ## USER ENDPOINTS
 
-**create a new user**
+### Create a new user
 
-endpoint: http://localhost:5000/users/create
+**endpoint: http://localhost:5000/users/create**
 
-method: POST
+method: **POST**
 
 request required :
 
 **request body** 
+
+
+```bash
 
 - properties : {
 
@@ -88,16 +92,24 @@ request required :
     - password : string     
 }
 
-Success Response:
+```
 
+
+**Success Response:**
+
+
+```bash
 - code:  200
 
 - content: {
     - message of success
     }
 
+```
 
-Bad Response:
+**Bad Response:**
+
+```bash
 
 - code : 400
 
@@ -105,18 +117,20 @@ Bad Response:
     - message of failure 
     }
 
+```
+
+### Authentication user
 
 
-**Authentication user**
+**endpoint: http://localhost:5000/sessions**
 
-
-endpoint: http://localhost:5000/sessions
-
-method: POST
+method: **POST**
 
 request required :
 
 **request body**
+
+```bash
 
 - properties : {
     
@@ -124,7 +138,12 @@ request required :
     - password : string     
 }
 
-Success Response:
+```
+
+**Success Response:**
+
+
+```bash
 
 - code:  200
 
@@ -133,8 +152,11 @@ Success Response:
     - message of success
     }
 
+```
 
-Bad Response:
+**Bad Response:**
+
+```bash
 
 - code : 400
 
@@ -142,12 +164,12 @@ Bad Response:
     - message of failure 
     }
 
-
+```
 
 ## Bookmarks endpoint
 
 
-**Create a new bookmark**
+### Create a new bookmark
 
 endpoint: http://localhost:5000/bookmarks/create
 
