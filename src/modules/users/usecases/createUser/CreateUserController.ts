@@ -19,7 +19,8 @@ class CreateUserController{
         })
 
     }catch(err){
-        throw new Error("Server Error")
+        
+        return response.status(400).send(new Error("Server Error"))
     }
 
     }
