@@ -3,6 +3,7 @@ import "dotenv"
 import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
 import {sign} from "jsonwebtoken"
+import{compare} from "bcrypt"
 
   
   interface IResponse {
@@ -29,7 +30,9 @@ class AuthenticateUserUseCase {
             throw new Error("nickname or password invalid")
         }
 
-        if(password != user.password){
+        const passwordMatch = await compare(password , user.password);
+
+        if(!passwordMatch){
             throw new Error("nickname or password invalid")
         }
 
