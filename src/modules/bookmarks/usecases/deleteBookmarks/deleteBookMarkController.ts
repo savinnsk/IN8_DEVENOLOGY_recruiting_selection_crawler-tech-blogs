@@ -6,6 +6,8 @@ class DeleteBookmarkController {
     
     async handle(request , response : Response){
 
+    
+    try{
         const bookmark_id = request.params.id
         const user_id = request.user.id
 
@@ -17,6 +19,9 @@ class DeleteBookmarkController {
             message:"bookmark was deleted with success"
         })
 
+    }catch{
+        return response.status(400).send(new Error("Server Error"))
+    }
     }
 }
 
