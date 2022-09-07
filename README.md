@@ -79,8 +79,6 @@ ORM_DATABASE=api-fav-blogs
 
 method: **POST**
 
-request required :
-
 **request body** 
 
 
@@ -122,8 +120,6 @@ request required :
 **endpoint: http://localhost:5000/sessions**
 
 method: **POST**
-
-request required :
 
 **request body**
 
@@ -171,167 +167,197 @@ method: POST
 
 __Authentication required__
 
-request required :
 
 **request headers**
 
+```zsh
 - token
 
     -type : jsonwebtoken 
-
+```
 
 **request body** 
+
+```zsh
 
     - properties {
 
          - label : string 
          - link : string   
     }     
+```
 
-}
+**Success Response:**
 
-Success Response:
-
+```zsh
 - code:  201
 
 - content: {
     - message of success
     }
 
+```
 
-Bad Response:
+**Bad Response:**
 
+
+```zsh
 - code : 400
 
 - content: {
     - message of failure 
     }
 
+```
 
-**Delete a bookmark**
+### Delete a bookmark
 
-endpoint: http://localhost:5000/bookmarks/delete/{id}
+**endpoint: http://localhost:5000/bookmarks/delete/{id}**
 
-method: DELETE
+method: **DELETE**
 
 __Authentication required__
 
-request required :
 
 **request headers**
 
+```zsh
 - token
 
     -type : jsonwebtoken 
+```
 
 **request params**
 
+```zsh
 - id
-
+```
 
 **request params**
 
+
+```zsh
     - property : id    
+```
 
+**Success Response:**
 
-Success Response:
-
+```zsh
 - code:  201
 
 - content: {
     - message of success
     }
 
+```
 
-Bad Response:
+**Bad Response:**
 
+
+```zsh
 - code : 400
 
 - content: {
     - message of failure 
     }
 
+```
 
-**Edit a bookmark**
+## Edit a bookmark
 
-endpoint: http://localhost:5000/bookmarks/edit/{id}
+**endpoint: http://localhost:5000/bookmarks/edit/{id}**
 
-method: PUT
+method: **PUT**
 
 __Authentication required__
 
-request required :
-
 **request headers**
 
+```zsh
 - token
 
     -type : jsonwebtoken 
 
+```
 
 **request params**
 
+```zsh
 - id
+```
 
 **request body** 
 
+```zsh
     - properties {
 
          - label : string 
          - link : string   
     }     
 
-Success Response:
+```
 
+**Success Response:**
+
+```zsh
 - code:  201
 
 - content: {
     - message of success
     }
 
+```
 
-Bad Response:
+**Bad Response:**
 
+```zsh
 - code : 400
 
 - content: {
     - message of failure 
     }
 
+```
 
 **Get All bookmarks**
 
-endpoint: http://localhost:5000/bookmarks/list
+**endpoint: http://localhost:5000/bookmarks/list**
 
-method: GET
+method: **GET**
 
 __Authentication required__
 
-request required :
 
 **request headers**
 
+```zsh
 - token
 
-    -type : jsonwebtoken 
-    
+    -type : jsonwebtoken     
+```
 
-Success Response:
+**Success Response:**
 
+```zsh
 - code:  201
+
 
 - content: {
     - message of success (all bookmarks)
     }
 
+```
 
-Bad Response:
+**Bad Response:**
+
+```zsh
 
 - code : 400
 
 - content: {
     - message of failure 
     }
+```
 
 **Developed for:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
 
