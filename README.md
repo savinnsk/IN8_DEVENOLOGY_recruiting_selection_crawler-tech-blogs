@@ -84,7 +84,7 @@ request required :
 **request body** 
 
 
-```bash
+```zsh
 
 - properties : {
 
@@ -97,7 +97,7 @@ request required :
 **Success Response:**
 
 
-```bash
+```zsh
 - code:  200
 
 - content: {
@@ -107,7 +107,7 @@ request required :
 
 **Bad Response:**
 
-```bash
+```zsh
 
 - code : 400
 
@@ -127,7 +127,7 @@ request required :
 
 **request body**
 
-```bash
+```zsh
 
 - properties : {
     
@@ -139,7 +139,7 @@ request required :
 **Success Response:**
 
 
-```bash
+```zsh
 
 - code:  200
 
@@ -151,7 +151,7 @@ request required :
 
 **Bad Response:**
 
-```bash
+```zsh
 
 - code : 400
 
