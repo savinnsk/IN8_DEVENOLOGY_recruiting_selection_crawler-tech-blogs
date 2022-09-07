@@ -64,7 +64,7 @@ $ yarn migration:run
 
 ####  example env variables..
 
-```bash
+```zsh
 ORM_USERNAME=postgres
 ORM_HOST=localhost
 ORM_PASSWORD=admin
@@ -91,7 +91,6 @@ request required :
     - name : string 
     - password : string     
 }
-
 ```
 
 
@@ -104,7 +103,6 @@ request required :
 - content: {
     - message of success
     }
-
 ```
 
 **Bad Response:**
@@ -116,7 +114,6 @@ request required :
 - content: {
     - message of failure 
     }
-
 ```
 
 ### Authentication user
@@ -137,7 +134,6 @@ request required :
     - name : string 
     - password : string     
 }
-
 ```
 
 **Success Response:**
@@ -151,7 +147,6 @@ request required :
     - token authentication
     - message of success
     }
-
 ```
 
 **Bad Response:**
@@ -163,7 +158,6 @@ request required :
 - content: {
     - message of failure 
     }
-
 ```
 
 ## Bookmarks endpoint
