@@ -77,6 +77,13 @@ ORM_DATABASE=api-fav-blogs
 USER_SECRET_TOKEN=batata
 ```
 
+To run test
+
+```zsh
+yarn test
+```
+
+
 ## USER ENDPOINTS
 
 ### Create a new user
