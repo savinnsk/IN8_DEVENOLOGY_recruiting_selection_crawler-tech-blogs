@@ -52,12 +52,12 @@ $ cp .env.example .env
 $ SHOULD HAVE A DATABASE CALLED api-fav-blogs
 
 # Once the services are running, run the migrations
-$ yarn migration:run
+$ yarn typeorm migration:run -d/src/shared/infra/typeorm/data-source.ts
 
 
 
 # Start all the services and the application with Docker Compose
-$ docker-compose up -d
+$ sudo docker-compose up -d
 
 
 
