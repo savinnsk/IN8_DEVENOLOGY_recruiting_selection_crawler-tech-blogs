@@ -52,7 +52,7 @@ $ cp .env.example .env
 $ SHOULD HAVE A DATABASE CALLED api-fav-blogs
 
 # Once the services are running, run the migrations
-$ yarn typeorm migration:run -d/src/shared/infra/typeorm/data-source.ts
+$ yarn typeorm migration:run -d /src/shared/infra/typeorm/data-source.ts
 
 
 
