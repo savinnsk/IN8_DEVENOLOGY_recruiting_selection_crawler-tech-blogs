@@ -14,13 +14,17 @@ class CreateUserController{
 
         const user = await createUserUseCase.execute(name  , password) 
 
-        return response.status(201).json({
-            message : `${user.name} was created with success`
-        })
+        const responseController = {
+            message : `${user.name} was created with success`,
+            statusCode : 200,
+            res : response.redirect("/")
+        }
+
+        return responseController
 
     }catch(err){
         
-        return response.status(400).send(new Error("Server Error"))
+        return response.status(500).send(new Error("Server Error"))
     }
 
     }
