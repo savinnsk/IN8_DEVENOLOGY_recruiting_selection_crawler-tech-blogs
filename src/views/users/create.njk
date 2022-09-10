@@ -1,0 +1,26 @@
+{% extends "layout.njk"  %}
+
+
+{% block head %}
+
+  <link rel="stylesheet" href="/create.css">
+
+{% endblock %}
+
+{% block content %}
+   
+  <form method="POST" action="/users/create"  enctype="multipart/form-data">
+      
+      <div>
+        <span>create a nickname</span><input  name="name" type="text">
+      </div>
+
+       <div>
+        <span>create a password</span><input name="password" type="text" >
+      </div>
+
+      <button type="submit">create</button>
+  
+  </form>
+    
+ {% endblock %}
