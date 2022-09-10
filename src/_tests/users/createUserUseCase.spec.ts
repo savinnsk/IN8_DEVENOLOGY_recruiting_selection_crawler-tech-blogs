@@ -14,7 +14,7 @@ describe("create user" , () => {
     it("should be able to create a new user" , async() =>{
 
        const user = await createUserUseCase.execute(
-                "Name car",
+                "Name user",
                 "new password"
             )
 
