@@ -1,0 +1,38 @@
+h1{
+    padding: 1rem;
+    
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+}
+
+form {
+
+    margin: 10rem;
+}
+
+input {
+    padding: 1rem;
+    border-radius: 10rem;
+}
+
+button {
+
+    background-color: rgb(212, 103, 103);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    padding: 1rem;
+    margin: 1rem 0 0 9.5rem;
+    height: 3rem;
+    width: 8rem;
+    align-content: center;
+}
+
+
+button:hover {
+
+    background-color: var(--yellow500);
+}

@@ -52,3 +52,9 @@ a{
     color : inherit ;
     text-decoration: none;
 }
+
+#borda {
+
+    position: absolute;
+    bottom: 0;
+}

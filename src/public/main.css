@@ -1,7 +1,12 @@
 
+
+
+
 header{
     height : 5rem ;
-    border-bottom : 1px solid gray
+    border-bottom : 1px solid gray;
+    width: 100%;
+    display: flex;
 }
 
 .header-container{
@@ -10,7 +15,6 @@ header{
     height : 5rem ;
     margin : 0 auto ; 
     padding: 0 2rem;
-    display : flex ;
     align-items: center;
 
 }

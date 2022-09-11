@@ -12,7 +12,16 @@ const deleteBookmarkController = new DeleteBookmarkController()
 const editBookMarkController = new EditBookMarkController()
 const listAllBookmarksUserController = new ListAllBookmarksUserController()
 
-bookmarksRoutes.post("/create" , ensureUserAuthenticated,createBookMarkController.handle)
+
+
+const multer = require("multer")
+const upload = multer({ dest: 'uploads/' })
+
+
+bookmarksRoutes.post("/create" ,
+upload.fields([{ name: 'label', password : 'link' }]), 
+ensureUserAuthenticated,createBookMarkController.handle)
+
 bookmarksRoutes.delete("/delete/:id" , ensureUserAuthenticated , deleteBookmarkController.handle)
 bookmarksRoutes.put("/edit/:id" , ensureUserAuthenticated ,editBookMarkController.handle )
 bookmarksRoutes.get("/list" , ensureUserAuthenticated , listAllBookmarksUserController.handle)

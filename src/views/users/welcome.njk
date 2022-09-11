@@ -1,0 +1,35 @@
+{% extends "layout.njk"  %}
+
+
+{% block head %}
+
+     <link rel="stylesheet" href="/users/welcome.css">
+     <link rel="stylesheet" href="/main.css">
+
+    <title>FavLinks</title>
+{% endblock %}
+
+{% block content %}
+    <header>
+        <div class="header-container">
+            <div class="welcome-container">
+                <h1>⭐ Welcome {{user.name}} ! Starts saving your <span>FavLinks !</span> </h1>
+                <button href="/sessions">Get Out</button>
+            </div>
+        </div>
+      
+    </header>
+
+
+    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
+        <div class="save-link-form">
+            <h2>Here you can save your favorites tech-blogs<h2>
+                <h2>title : <input placeholder="eg: Name/Label Blog" type="text"></h2>
+                <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
+
+        </div>
+
+        <button type="submit">Save ⭐</button>
+    </form>
+    
+ {% endblock %}
