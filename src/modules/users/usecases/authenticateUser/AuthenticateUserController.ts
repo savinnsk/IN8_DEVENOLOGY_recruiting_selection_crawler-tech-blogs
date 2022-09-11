@@ -14,7 +14,7 @@ class AuthenticateUserController{
 
         const token = await authenticateUserUseCase.execute(name , password);
 
-        return response.render('/' , {token})
+        return response.render('index' , {user : token.user , token : token.token })
 
     }catch{
 

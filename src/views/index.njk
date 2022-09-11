@@ -8,7 +8,33 @@
 {% endblock %}
 
 {% block content %}
-    <header>
+
+    {%if user %}
+    
+         <header>
+        <div class="header-container">
+            <div class="links">
+                 <h1>⭐ Hi {{user.name}} Again! to <span>FavLinks !</span> </h1>
+                <a href="/sessions">log out</a>
+            </div>
+        </div>
+      
+    </header>
+
+    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
+        <div class="save-link-form">
+            <h2>Here you can save your favorites tech-blogs<h2>
+                <h2>title : <input placeholder="eg: Name/Label Blog" type="text"></h2>
+                <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
+
+        </div>
+
+        <button type="submit">Save ⭐</button>
+    </form>
+
+    {% else %}
+
+        <header>
         <div class="header-container">
             <div class="links">
                 <a href="/users/create">sign in</a>
@@ -24,5 +50,8 @@
             <h2>Here you can save your favorite tech-blogs</h3>
         </div>
     </div>
+        
+
+    {% endif %}
     
  {% endblock %}

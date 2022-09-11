@@ -44,9 +44,7 @@ class AuthenticateUserUseCase {
 
           const tokenReturn: IResponse = {
             token,
-            user: {
-              name: user.name,
-            },
+            user
           };
       
           return tokenReturn;
