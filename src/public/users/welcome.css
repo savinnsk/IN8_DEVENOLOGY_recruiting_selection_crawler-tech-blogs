@@ -9,18 +9,24 @@ h1{
 }
 
 form {
-
     margin: 10rem;
+    align-content: center;
 }
 
-input {
+form p  {
     padding: 1rem;
+}
+
+
+input {
+    padding: 1rem ;
     border-radius: 10rem;
+   
 }
 
 button {
 
-    background-color: rgb(212, 103, 103);
+    background-color: var(--yellow500);
     color: white;
     font-weight: bold;
     border-radius: 5rem;
@@ -34,5 +40,5 @@ button {
 
 button:hover {
 
-    background-color: var(--yellow500);
+    background-color: var(--cyan500);
 }

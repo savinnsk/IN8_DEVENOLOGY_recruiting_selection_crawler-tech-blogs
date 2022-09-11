@@ -1,5 +1,5 @@
 
-import { Response, Request,Router } from "express";
+import { Router } from "express";
 import { AuthenticateUserController } from "../../../../modules/users/usecases/authenticateUser/AuthenticateUserController";
 import { upload } from "../../../middlewares/multer";
 

@@ -13,23 +13,27 @@
     <header>
         <div class="header-container">
             <div class="welcome-container">
-                <h1>⭐ Welcome {{user.name}} ! Starts saving your <span>FavLinks !</span> </h1>
-                <button href="/sessions">Get Out</button>
+                <h1>⭐ You account was created with success, please </h1>
             </div>
+
+             <form method="POST" action="/sessions"  enctype="multipart/form-data">
+                
+                <p>
+                    name : <input name="name" type="text">
+                </p> 
+
+                <p>
+                    password :<input name="password" type="text">
+                </p>
+                
+
+                <span> 
+                  <button type="submit">Sign Up</button>
+                </span> 
+            </form>
         </div>
       
     </header>
 
-
-    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
-        <div class="save-link-form">
-            <h2>Here you can save your favorites tech-blogs<h2>
-                <h2>title : <input placeholder="eg: Name/Label Blog" type="text"></h2>
-                <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
-
-        </div>
-
-        <button type="submit">Save ⭐</button>
-    </form>
     
  {% endblock %}

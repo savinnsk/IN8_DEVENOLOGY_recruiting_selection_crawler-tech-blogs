@@ -4,7 +4,7 @@ import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
 class AuthenticateUserController{
 
-    async handle(request : Request , response : Response) : Promise<Response>{
+    async handle(request : Request , response : Response) : Promise<any>{
 
     try{    
 
@@ -14,8 +14,7 @@ class AuthenticateUserController{
 
         const token = await authenticateUserUseCase.execute(name , password);
 
-
-        return response.status(200).json(token);
+        return response.render('/' , {token})
 
     }catch{
 
