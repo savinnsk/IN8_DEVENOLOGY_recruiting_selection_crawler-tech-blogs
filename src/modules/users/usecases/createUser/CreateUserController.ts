@@ -8,11 +8,11 @@ class CreateUserController{
 
     try{
 
-        const {name , password} = request.body
+        const {name , password , email} = request.body
 
         const createUserUseCase = container.resolve(CreateUserUseCase)
 
-        const user = await createUserUseCase.execute(name  , password) 
+        const user = await createUserUseCase.execute(name  , password , email) 
 
         return  response.render("users/welcome" )
 
