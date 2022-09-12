@@ -13,6 +13,15 @@ class UsersRepository implements IUsersRepository{
         this.repository = AppDataSource.getRepository(User)
     }
 
+    async findByEmail(email: string): Promise<User> {
+        
+        const user = await this.repository.findOne({
+            where: {email}
+        })
+
+        return user
+    }
+
     async findById(id : string): Promise<User>{
 
         const user = await this.repository.findOne({
@@ -31,11 +40,12 @@ class UsersRepository implements IUsersRepository{
         return user
     }
 
-    async create(name: string, password: string): Promise<User> {
+    async create(name: string, password: string , email : string): Promise<User> {
 
         const user = await this.repository.create({
             name,
-            password
+            password,
+            email
         })
 
         await this.repository.save(user)
