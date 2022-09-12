@@ -26,6 +26,8 @@ class AuthenticateUserUseCase {
 
         const user = await this.usersRepository.findByName(name)
 
+        
+
         if(!user){
             throw new Error("nickname or password invalid")
         }
