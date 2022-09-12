@@ -12,15 +12,19 @@ class CreateUserUseCase {
     ){}
 
 
-    async execute(name : string , password : string) : Promise<User>
+    async execute(name : string , password : string , email : string) : Promise<User>
     {
         try{
 
-        //const userAlreadyExists = await this.usersRepository.findByName(name)
+        const userAlreadyExists = await this.usersRepository.findByEmail(email);
+
+        if(userAlreadyExists){
+            throw new Error("User Already exists")
+        }
         
         const passwordHash = await hash(password , 8)
         
-        const user = await this.usersRepository.create(name , passwordHash);
+        const user = await this.usersRepository.create(name , passwordHash , email);
 
         return user
         
