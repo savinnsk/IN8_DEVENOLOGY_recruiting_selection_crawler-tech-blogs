@@ -22,11 +22,9 @@ class AuthenticateUserUseCase {
     ){}
 
 
-    async execute(name : string , password : string){
+    async execute(email : string , password : string){
 
-        const user = await this.usersRepository.findByName(name)
-
-        
+        const user = await this.usersRepository.findByEmail(email) 
 
         if(!user){
             throw new Error("nickname or password invalid")
