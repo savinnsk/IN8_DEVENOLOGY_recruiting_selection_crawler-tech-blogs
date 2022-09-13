@@ -12,15 +12,15 @@ export async function ensureUserAuthenticated(
   response: Response,
   next: NextFunction
 ) {
-  const authHeader = request.headers.authorization;
+  const {id , token } = request.body;
   // from header request endpoint
-  if (!authHeader) {
+  if (!token) {
     throw new Error("Token missing");
   }
 
   // [0] = bearer
   // [1] = jwt
-  const [, token] = authHeader.split(" ");
+ // const [, token] = authHeader.split(" ");
 
   // verify token is valid
 
