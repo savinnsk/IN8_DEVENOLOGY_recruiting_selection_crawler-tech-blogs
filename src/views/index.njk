@@ -14,8 +14,9 @@
          <header>
         <div class="header-container">
             <div class="links">
-                 <h1>⭐ Hi {{user.name}} Again! to <span>FavLinks !</span> </h1>
+                 <h1>⭐ Hi again {{user.name}}! to <span>FavLinks !</span> </h1>
                 <a href="/sessions">log out</a>
+                <input id="token" type="hidden" value="{{token}}"> <p>{{token}}</p>
             </div>
         </div>
       
@@ -31,6 +32,12 @@
 
         <button type="submit">Save ⭐</button>
     </form>
+
+
+    <script src="./users/scripts/createuser.js">
+    
+    </script>
+        
 
     {% else %}
 
@@ -50,7 +57,7 @@
             <h2>Here you can save your favorite tech-blogs</h3>
         </div>
     </div>
-        
+
 
     {% endif %}
     
