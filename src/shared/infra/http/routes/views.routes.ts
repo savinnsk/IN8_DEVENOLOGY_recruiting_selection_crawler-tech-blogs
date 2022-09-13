@@ -11,5 +11,8 @@ viewRoutes.get("/users/create" , (request : Request ,  response : Response ) =>{
     response.render("users/create")
 })
 
+viewRoutes.get("/users/welcome" , (request : Request ,  response : Response ) =>{
+    response.render("users/welcome")
+})
 
 export {viewRoutes}
