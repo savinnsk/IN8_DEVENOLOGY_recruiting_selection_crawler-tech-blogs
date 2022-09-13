@@ -19,7 +19,7 @@ const upload = multer({ dest: 'uploads/' })
 
 
 bookmarksRoutes.post("/create" ,
-upload.fields([{ name: 'label', password : 'link' }]), 
+upload.fields([{ name: 'label', link : 'link' , token :'token' , id : 'id' }]), 
 ensureUserAuthenticated,createBookMarkController.handle)
 
 bookmarksRoutes.delete("/delete/:id" , ensureUserAuthenticated , deleteBookmarkController.handle)

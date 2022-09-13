@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="/main.css">
     <title>FavLinks</title>
+    
 {% endblock %}
 
 {% block content %}
@@ -16,7 +17,6 @@
             <div class="links">
                  <h1>⭐ Hi again {{user.name}}! to <span>FavLinks !</span> </h1>
                 <a href="/sessions">log out</a>
-                <input id="token" type="hidden" value="{{token}}"> <p>{{token}}</p>
             </div>
         </div>
       
@@ -25,9 +25,10 @@
     <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
         <div class="save-link-form">
             <h2>Here you can save your favorites tech-blogs<h2>
-                <h2>title : <input placeholder="eg: Name/Label Blog" type="text"></h2>
+                <h2>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></h2>
                 <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
-
+                <input id="token" name="token" type="hidden" value="{{token}}">
+                <input id="id" name="id" type="hidden" value="{{user.id}}">
         </div>
 
         <button type="submit">Save ⭐</button>
