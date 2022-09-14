@@ -1,5 +1,6 @@
 import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../../users/interfaces/IUsersRepository";
+import { Bookmark } from "../../infra/entity/Bookmark";
 import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository";
 
 @injectable()
@@ -13,7 +14,7 @@ class CreateBookMarkUseCase {
         private usersRepository : IUsersRepository
     ){}
 
-    async execute(user_id: string , label : string , link : string ) : Promise<string>{
+    async execute(user_id: string , label : string , link : string ) : Promise<Bookmark[]>{
 
         const user = await this.usersRepository.findById(user_id);
 
@@ -21,9 +22,10 @@ class CreateBookMarkUseCase {
             throw new Error("User doesn't exists")
         }
 
-        const bookmark = await this.bookmarksLinksRepository.create(user_id , link ,label)
+        await this.bookmarksLinksRepository.create(user_id , link ,label)
+        const bookmarks = await this.bookmarksLinksRepository.getAll(user_id)
 
-        return bookmark.link
+        return bookmarks
 
     }
 }
