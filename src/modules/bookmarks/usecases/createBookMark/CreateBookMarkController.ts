@@ -19,7 +19,7 @@ class CreateBookMarkController{
             //message:`bookmark ${bookmark} was created with success`
    // })
 
-   return response.render("bookmarks/create" , {message : "Bookmark created with success"})
+   return response.render("bookmarks/create" , {message : "Bookmark created with success" , bookmarks })
 
     }catch{
 

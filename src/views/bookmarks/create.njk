@@ -38,11 +38,21 @@
 
 
     <div class="bookmarks">
+         {% for bookmark in bookmarks %}
         <div class="bookmark-card">
-            <p>name</p>
-            <p>link</p>
-            <button type="submit">editar</button>
-            <button type="submit">deletar</button>
+            <p>{{bookmark.label}}</p>
+            <p>{{bookmark.link}}</p>
+
+            <form method="POST" action="edit/" enctype="multipart/form-data">
+                <button type="submit">editar</button>
+            </form>
+
+            <form method="DELETE" action="/bookmarks/delete/{{bookmark.id}}" enctype="multipart/form-data">
+                <button type="submit">deletar</button>
+            </form>
+            
+            
+        {% endfor %}
         </div>
         
     </div>
