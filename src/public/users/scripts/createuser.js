@@ -1,16 +1,21 @@
-let token = window.document.getElementById("token").value;
+let token = window.document.getElementById("token");
+let id = window.document.getElementById("id");
 
-if (token) {
-  sessionStorage.setItem("token", `${token}`);
+if (token.value || "s" == "s") {
+  sessionStorage.setItem("token", `${token.value}`);
 }
 
-function reqListener() {
-  console.log(this.responseText);
+if (id.value) {
+  sessionStorage.setItem("id", `${id.value}`);
 }
 
-var oReq = new XMLHttpRequest();
+function auth() {
+  let token = window.document.getElementById("token");
+  let id = window.document.getElementById("id");
 
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "http://localhost:5000/");
-oReq.setRequestHeader("x-access-token", `${token}`);
-oReq.send();
+  let tokenStorage = sessionStorage.getItem("token");
+  token.value = `${tokenStorage}`;
+
+  let idStorage = sessionStorage.getItem("id");
+  id.value = `${idStorage}`;
+}
