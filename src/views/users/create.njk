@@ -10,8 +10,10 @@
 {% block content %}
    
   <form method="POST" action="/users/create"  enctype="multipart/form-data">
-      
-      <div>
+
+    <div class="fieldsCreate">
+
+        <div>
         <span>create a nickname</span><input  name="name" type="text">
       </div>
 
@@ -20,9 +22,13 @@
       </div>
 
          <div>
-        <span>create a email</span><input name="email" type="text" >
+        <span>create a new email</span><input placeholder="exemple@email.com" name="email" type="text" >
       </div>
 
+
+    </div>
+      
+      
       <button type="submit">create</button>
   
   </form>

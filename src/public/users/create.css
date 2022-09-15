@@ -3,6 +3,14 @@ form {
     padding: 10rem;
 }
 
+.fieldsCreate {
+    align-content: center;
+}
+
+.fieldsCreate input {
+    padding: 0.5rem;
+}
+
 div{
 
     margin: 2rem;
