@@ -12,12 +12,15 @@
  
  {% block content %}
 
- 
+ <div>
+
+
+
  
  <header>
         <div class="header-container">
             <div class="links">
-                 <h1>{% if message %}{{message}} {{user.name}} {% else%} ⭐ Hi again {{user.name}}! to <span>FavLinks !{% endif%}</span> </h1>
+                 <h1>{% if message %}{{message}} {{user.name}} {% else %} ⭐ Hi again {{user.name}}! to <span>FavLinks !{% endif%}</span> </h1>
                 <a href="/sessions">log out</a>
             </div>
         </div>
@@ -25,62 +28,76 @@
     </header>
 
     <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
-        <div class="save-link-form" onmouseover="auth()" >
+        <div class="save-link-form"  >
             <h2>Here you can save your favorites tech-blogs<h2>
                 <h2>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></h2>
                 <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
-                <input id="token" name="token" type="hidden" value="{{token}}">
-                <input id="id" name="id" type="hidden" value="{{user.id}}">
+
+                <input  id="tokenSession" name="token" type="hidden" value="{{token}}">
+                <input  id="idSession" name="id" type="hidden" value="{{user.id}}">
+             
         </div>
 
-        <button  type="submit">Save ⭐</button>
+        <button onmouseover=""  type="submit">Save ⭐</button>
     </form>
-
 
     <div class="bookmarks">
          {% for bookmark in bookmarks %}
-        <div class="bookmark-card">
+        <div  class="bookmark-card">
             <p>{{bookmark.label}}</p>
             <p>{{bookmark.link}}</p>
 
-            <form method="POST" action="edit/" enctype="multipart/form-data">
+            <form method="GET" action="edit/" enctype="multipart/form-data">
                 <button type="submit">editar</button>
             </form>
 
-            <form method="DELETE" action="/bookmarks/delete/{{bookmark.id}}" enctype="multipart/form-data">
+            <form  method="POST" action="/bookmarks/delete" enctype="multipart/form-data">
+                <input value="{{bookmark.id}}" name="id_bookmark" type="hidden">
+                <input id="tokenUser" name="token" type="hidden" value="{{token}}">
+                <input id="idUser" name="id" type="hidden" value="{{user.id}}">
                 <button type="submit">deletar</button>
             </form>
-            
-            
-        {% endfor %}
         </div>
-        
+        {% endfor %}
     </div>
-
+ </div>
 
     <script>
 
+            let firstUserTokenSession = window.document.querySelector("#tokenSession")
+            let firstUserIdSession = window.document.querySelector("#idSession")
 
-            if (token.value ) {
-            sessionStorage.setItem("token", `${token.value}`);
+
+            let bookmarksUserToken = window.document.querySelectorAll("#tokenUser");
+            let bookmarksUserId = window.document.querySelectorAll("#idUser");
+
+            let tokenSessionStorage = sessionStorage.getItem("token");
+            let idSessionStorage = sessionStorage.getItem("id");
+
+            function saveDataSessionStorage(){
+                sessionStorage.setItem("token", `${firstUserTokenSession.value}`);
+                sessionStorage.setItem("id", `${firstUserIdSession.value}`)
             }
 
-            if (id.value) {
-             sessionStorage.setItem("id", `${id.value}`);
+            if(firstUserTokenSession.value || firstUserIdSession.value ){
+                saveDataSessionStorage()
+            }
+            if(!tokenSave.value || !idSave.value){
+                tokenSave.setAttribute("value", `${tokenSessionStorage}`)
+                idSave.setAttribute("value", `${idSessionStorage}`)
+                 
+            }
+            if(!bookmarksUserId[0].value || !bookmarksUserToken[0].value){
+                
+                   for(i = 0 ; i < bookmarksUserId.length ; i++ ){
+
+                        bookmarksUserToken[i].setAttribute("value", `${tokenSessionStorage}`)
+                        bookmarksUserId[i].setAttribute("value", `${idSessionStorage}`)
+
+                   }        
+                
             }
 
-            function auth(){
-            let token = window.document.getElementById("token");
-            let id = window.document.getElementById("id");
-
-
-            let tokenStorage = sessionStorage.getItem("token");
-            token.value = `${tokenStorage}`;
-
-            let idStorage = sessionStorage.getItem("id");
-            id.value = `${idStorage}`;
-
-            }
     </script>
 
 
