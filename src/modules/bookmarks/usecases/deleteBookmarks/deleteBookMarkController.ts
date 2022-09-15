@@ -8,7 +8,7 @@ class DeleteBookmarkController {
 
     
     try{
-        const bookmark_id = request.params.id
+        const bookmark_id = request.body.id_bookmark
         const user_id = request.user.id
 
         const deleteBookMarkUseCase = container.resolve(DeleteBookMarkUseCase)

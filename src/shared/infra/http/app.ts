@@ -3,7 +3,7 @@ import * as express from "express"
 import {router} from "./routes"
 
 import * as nunjucks from "nunjucks"
-import methodOverride = require("method-override");
+const methodOverride = require("method-override");
 
 
 const app = express();
