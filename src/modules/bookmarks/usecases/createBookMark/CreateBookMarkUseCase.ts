@@ -22,7 +22,7 @@ class CreateBookMarkUseCase {
             throw new Error("User doesn't exists")
         }
 
-        await this.bookmarksLinksRepository.create(user_id , link ,label)
+        await this.bookmarksLinksRepository.create(user_id , label , link)
         const bookmarks = await this.bookmarksLinksRepository.getAll(user_id)
 
         return bookmarks

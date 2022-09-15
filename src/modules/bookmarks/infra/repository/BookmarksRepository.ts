@@ -12,10 +12,10 @@ class BookmarksLinksRepository implements IBookmarksRepository{
         this.repository = AppDataSource.getRepository(Bookmark)
     }
 
-    async create(user_id: string, link: string , label : string): Promise<Bookmark> {
+    async create(user_id: string, label : string , link : string): Promise<Bookmark> {
        const bookmark = this.repository.create({
-        link,
         label,
+        link,
         user_id : user_id
        })
             

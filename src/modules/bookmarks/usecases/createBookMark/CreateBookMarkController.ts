@@ -9,11 +9,11 @@ class CreateBookMarkController{
     
     try{
         const user_id = request.user.id
-        const {link , label} = request.body    
+        const {label , link } = request.body    
             
         const createBookMarkUseCase = container.resolve(CreateBookMarkUseCase)
 
-        const bookmarks = await createBookMarkUseCase.execute(user_id , link , label)
+        const bookmarks = await createBookMarkUseCase.execute(user_id, label ,link)
 
         //return response.status(201).json({
             //message:`bookmark ${bookmark} was created with success`
