@@ -10,13 +10,12 @@
 
 {% block content %}
     <header>
-        <div class="header-container">
             <div class="welcome-container">
                 <h1>⭐ You already have account? please login </h1>
             </div>
+    </header>
 
-             <form method="POST" action="/sessions"  enctype="multipart/form-data">
-                
+    <form method="POST" action="/sessions"  enctype="multipart/form-data">            
             <div class="fieldsLogin">
 
                 <p> Email:</p> 
@@ -27,10 +26,10 @@
 
             </div>
                   <button type="submit">Sign Up</button>
-                </div>
-            </form>
+
+    </form>
       
-    </header>
+  
 
     
  {% endblock %}

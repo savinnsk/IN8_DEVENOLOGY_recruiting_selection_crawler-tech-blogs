@@ -2,43 +2,32 @@
 
 
 {% block head %}
-
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/bookmarks/create.css">
     <title>FavLinks</title>
     
 {% endblock %}
  
- 
- 
  {% block content %}
 
- <div>
-
-
-
- 
- <header>
-        <div class="header-container">
-            <div class="links">
-                 <h1>{% if message %}{{message}} {{user.name}} {% else %} ⭐ Hi again {{user.name}}! to <span>FavLinks !{% endif%}</span> </h1>
-                <a href="/sessions">log out</a>
-            </div>
+    <header>
+        <div class="createBookmark-header">
+              <h1> ⭐ {{user.name}}! save your <span>FavLinks !</span> </h1>
         </div>
-      
     </header>
 
-    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
-        <div class="save-link-form"  >
-            <h2>Here you can save your favorites tech-blogs<h2>
-                <h2>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></h2>
-                <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
 
-                <input  id="tokenSession" name="token" type="hidden" value="{{token}}">
-                <input  id="idSession" name="id" type="hidden" value="{{user.id}}">
+    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
+
+        <div class="fieldsCreateBookmark"  >
+            <h2>Here you can save your favorites tech-blogs</p>
+            <p>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></p>
+            <p>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></p>
+            <input  id="tokenSession" name="token" type="hidden" value="{{token}}">
+            <input  id="idSession" name="id" type="hidden" value="{{user.id}}">
              
         </div>
 
-        <button onmouseover=""  type="submit">Save ⭐</button>
+        <button type="submit">Save ⭐</button>
     </form>
 
     <div class="bookmarks">
@@ -60,7 +49,6 @@
         </div>
         {% endfor %}
     </div>
- </div>
 
     <script>
 
