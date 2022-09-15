@@ -4,7 +4,6 @@
 {% block head %}
 
      <link rel="stylesheet" href="/users/welcome.css">
-     <link rel="stylesheet" href="/main.css">
 
     <title>FavLinks</title>
 {% endblock %}
@@ -13,25 +12,23 @@
     <header>
         <div class="header-container">
             <div class="welcome-container">
-                <h1>⭐ You alredy have account, please login </h1>
+                <h1>⭐ You already have account? please login </h1>
             </div>
 
              <form method="POST" action="/sessions"  enctype="multipart/form-data">
                 
-                <p>
-                    email : <input name="email" type="text">
-                </p> 
+            <div class="fieldsLogin">
 
-                <p>
-                    password :<input name="password" type="text">
-                </p>
-                
+                <p> Email:</p> 
+                <p> <input name="email" type="text"></p>
 
-                <span> 
+                <p>Password :</p>
+                <p><input name="password" type="text"></p>
+
+            </div>
                   <button type="submit">Sign Up</button>
-                </span> 
+                </div>
             </form>
-        </div>
       
     </header>
 

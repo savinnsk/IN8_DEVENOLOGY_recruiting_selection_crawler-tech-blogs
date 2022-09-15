@@ -1,6 +1,15 @@
+h1{
+    padding: 1rem;
+    
+}
+
 form {
     margin: 0;
-    padding: 10rem;
+    padding: 5rem;
+}
+
+form p  {
+    padding: 0.5rem;
 }
 
 .fieldsCreate {
@@ -8,28 +17,25 @@ form {
 }
 
 .fieldsCreate input {
-    padding: 0.5rem;
+    padding: 0.7rem ;
+    border-radius: 10px;
 }
 
-div{
-
-    margin: 2rem;
-}
-
-
-span{
-    margin-right: 1rem;
-}
 
 button{
-    padding: 0.65rem;
-    border-radius: 10%;
+    background-color: var(--yellow500);
+    color: white;
     font-weight: bold;
-    margin-left: 30%;
+    border-radius: 5rem;
+    padding: 1rem;
+    margin: 1rem 0 0 9.5rem;
+    height: 3rem;
+    width: 8rem;
+    align-content: center;
     transition: 0.2s;
 }
 
 button:hover {
-    background-color: var(--yellow500);
+    background-color: var(--cyan500);
 }
 

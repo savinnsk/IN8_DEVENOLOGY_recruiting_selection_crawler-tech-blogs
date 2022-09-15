@@ -8,22 +8,27 @@
 {% endblock %}
 
 {% block content %}
+
+            <div class="create-container">
+                <h1>⭐ New? please create your account</h1>
+            </div>
    
   <form method="POST" action="/users/create"  enctype="multipart/form-data">
 
     <div class="fieldsCreate">
+      
+        <p>create a nickname</p>
+        <p> <input  name="name" type="text"> </p>
 
-        <div>
-        <span>create a nickname</span><input  name="name" type="text">
-      </div>
+       
+        <p>create a password</p>
+        <p><input name="password" type="text" ></p>
+       
 
-       <div>
-        <span>create a password</span><input name="password" type="text" >
-      </div>
-
-         <div>
-        <span>create a new email</span><input placeholder="exemple@email.com" name="email" type="text" >
-      </div>
+        <p>create a new email</p>
+        <p><input placeholder="exemple@email.com" name="email" type="text" > </p>
+       
+    
 
 
     </div>
