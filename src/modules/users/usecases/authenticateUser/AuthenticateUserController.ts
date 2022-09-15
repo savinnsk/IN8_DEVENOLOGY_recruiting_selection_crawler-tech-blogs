@@ -14,6 +14,12 @@ class AuthenticateUserController{
 
         const token = await authenticateUserUseCase.execute(email , password);
 
+        if(!token){
+            return response.status(500).json({
+                statusCode:500,
+                message:"Server Error"
+            })}
+
         return response.render('bookmarks/create' , {user : token.user , token : token.token })
 
     }catch{
