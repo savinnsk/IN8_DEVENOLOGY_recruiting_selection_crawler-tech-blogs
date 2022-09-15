@@ -14,7 +14,11 @@ class CreateUserController{
 
         const user = await createUserUseCase.execute(name  , password , email) 
 
-        return  response.render("users/welcome" )
+        if(!user){
+            return response.status(500).send("Server Error")
+        }
+
+        return  response.render("users/welcome")
 
     }catch(err){
         

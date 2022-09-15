@@ -7,8 +7,11 @@ const upload = multer({ dest: 'uploads/' })
 
 const createUserController = new CreateUserController()
 
-UsersRoutes.post("/create" , 
-upload.fields([{ name: 'name', password : 'password' }]),
+UsersRoutes.post("/create", 
+upload.fields([{
+name: 'name',
+password : 'password' ,
+email : 'email' }]),
  createUserController.handle )
 
 export {UsersRoutes}
