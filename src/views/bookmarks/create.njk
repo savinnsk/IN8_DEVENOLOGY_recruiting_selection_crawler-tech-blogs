@@ -27,25 +27,34 @@
              
         </div>
 
-        <button type="submit">Save ⭐</button>
+        <button class="create-button-form"  type="submit">Save ⭐</button>
     </form>
+
+    <h1>My FavLinks</h1>
 
     <div class="bookmarks">
          {% for bookmark in bookmarks %}
-        <div  class="bookmark-card">
-            <p>{{bookmark.label}}</p>
-            <p>{{bookmark.link}}</p>
+            <div  class="bookmark-card">
 
-            <form method="GET" action="edit/" enctype="multipart/form-data">
-                <button type="submit">editar</button>
-            </form>
+            <div class="header-card">
+                <h2>{{bookmark.label}}</h2>
+                <p>{{bookmark.link}}</p>
+            </div>    
+            
 
-            <form  method="POST" action="/bookmarks/delete" enctype="multipart/form-data">
-                <input value="{{bookmark.id}}" name="id_bookmark" type="hidden">
-                <input id="tokenUser" name="token" type="hidden" value="{{token}}">
-                <input id="idUser" name="id" type="hidden" value="{{user.id}}">
-                <button type="submit">deletar</button>
-            </form>
+            <div class="forms">
+                <form method="GET" action="edit/" enctype="multipart/form-data">
+                    <button type="submit">editar</button>
+                </form>
+
+                <form  method="POST" action="/bookmarks/delete" enctype="multipart/form-data">
+                    <input value="{{bookmark.id}}" name="id_bookmark" type="hidden">
+                    <input id="tokenUser" name="token" type="hidden" value="{{token}}">
+                    <input id="idUser" name="id" type="hidden" value="{{user.id}}">
+                    <button type="submit">deletar</button>
+                </form>
+        </div>
+            
         </div>
         {% endfor %}
     </div>
@@ -70,9 +79,9 @@
             if(firstUserTokenSession.value || firstUserIdSession.value ){
                 saveDataSessionStorage()
             }
-            if(!tokenSave.value || !idSave.value){
-                tokenSave.setAttribute("value", `${tokenSessionStorage}`)
-                idSave.setAttribute("value", `${idSessionStorage}`)
+            if(!firstUserIdSession.value || !firstUserTokenSession.value){
+                firstUserTokenSession.setAttribute("value", `${tokenSessionStorage}`)
+                firstUserIdSession.setAttribute("value", `${idSessionStorage}`)
                  
             }
             if(!bookmarksUserId[0].value || !bookmarksUserToken[0].value){

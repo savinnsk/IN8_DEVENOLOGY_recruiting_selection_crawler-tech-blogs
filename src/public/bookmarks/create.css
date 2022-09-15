@@ -12,9 +12,6 @@ form p  {
     padding: 0.5rem;
 }
 
-.fieldsLogin{
-    align-content: center;
-}
 
 
 input {
@@ -24,8 +21,14 @@ input {
 }
 
 
+.bookmarks {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    margin: 1rem;
+}
 
-button {
+
+.create-button-form {
 
     background-color: var(--yellow500);
     color: white;
@@ -40,13 +43,43 @@ button {
 }
 
 
+.bookmarks button {
+
+    background-color: var(--yellow500);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    width: 8rem;
+    align-content: center;
+    transition: 0.2s;
+}
+
 button:hover {
 
     background-color: var(--cyan500);
 }
 
-
-.bookmarks {
-    display: flex;
-    grid-column: 1fr 1fr  ;
+.bookmarks input {
+    padding: 1px;
 }
+
+
+
+.bookmarks form {
+    margin: 0;
+    padding: 3px;
+}
+
+.bookmarks form p  {
+    padding: 1px;
+}
+
+.bookmark-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
