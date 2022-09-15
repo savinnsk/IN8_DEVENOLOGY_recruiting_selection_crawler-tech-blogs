@@ -21,7 +21,7 @@ class CreateUserController{
             })
         }
 
-        return  response.render("users/welcome")
+        return  response.render("users/login")
 
     }catch(err){
         
