@@ -2,6 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../../users/interfaces/IUsersRepository";
 import { Bookmark } from "../../infra/entity/Bookmark";
 import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository";
+const crawler = require("../../../../shared/services/puppeteer")
 
 @injectable()
 class CreateBookMarkUseCase {
