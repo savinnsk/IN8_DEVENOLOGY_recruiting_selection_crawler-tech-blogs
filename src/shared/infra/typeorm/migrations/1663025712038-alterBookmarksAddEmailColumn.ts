@@ -14,7 +14,7 @@ export class alterBookmarksAddEmailColumn1663025712038 implements MigrationInter
 
     public async down(queryRunner: QueryRunner): Promise<void> {
 
-        await queryRunner.dropColumn("email")
+        await queryRunner.dropColumn("users" , "email")
     }
 
 }
