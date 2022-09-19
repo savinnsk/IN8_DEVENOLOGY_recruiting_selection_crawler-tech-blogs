@@ -14,10 +14,12 @@ class DeleteBookmarkController {
         const deleteBookMarkUseCase = container.resolve(DeleteBookMarkUseCase)
 
         await deleteBookMarkUseCase.execute(user_id , bookmark_id )
-
-        return response.status(201).json({
-            message:"bookmark was deleted with success"
-        })
+        
+        const Response = {
+            statusCode: 201,
+            message:"bookmark was deleted with success" 
+        }
+          return response.render("bookmarks/create")
 
     }catch{
         return response.status(400).send(new Error("Server Error"))

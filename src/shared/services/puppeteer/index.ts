@@ -2,23 +2,25 @@ import { launch } from "puppeteer";
 
 
 async function crawlerWebBlog(link) {
-
-
-  
   
   const browser = await launch();
+  
   const page = await browser.newPage();
   await page.goto(`${link}`);
 
-  const pageContent = await page.evaluate(() => {
+
+
+   const contents = await page.evaluate(() => {
     return {
       title: document.querySelector("h1").innerHTML,
     };
   });
 
-  console.log(pageContent);
+  console.log(contents.title)
 
-  await browser.close();
+  return contents
+
+
+ 
 }
-
-module.exports = { crawlerWebBlog };
+export{ crawlerWebBlog , launch };
