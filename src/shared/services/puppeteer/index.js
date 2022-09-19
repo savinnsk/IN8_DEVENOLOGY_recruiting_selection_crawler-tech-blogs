@@ -1,9 +1,10 @@
-import { launch } from "puppeteer";
+
+const puppeteer = require("puppeteer")
 
 
 async function crawlerWebBlog(link) {
   
-  const browser = await launch();
+  const browser = await puppeteer.launch();
   
   const page = await browser.newPage();
   await page.goto(`${link}`);
@@ -23,4 +24,5 @@ async function crawlerWebBlog(link) {
 
  
 }
-export{ crawlerWebBlog , launch };
+
+module.exports = {crawlerWebBlog}
