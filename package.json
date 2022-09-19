@@ -9,7 +9,7 @@
       "start": "ts-node src/index.ts",
       "typeorm": "ts-node-dev -r  tsconfig-paths/register  ./node_modules/typeorm/cli.js",
       "test": "jest",
-      "build": "tsc"
+      "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files"
    },
    "dependencies": {
       "bcrypt": "^5.0.1",
@@ -28,6 +28,9 @@
       "uuid": "^8.3.2"
    },
    "devDependencies": {
+      "@babel/cli": "^7.18.10",
+      "@babel/core": "^7.19.1",
+      "@babel/node": "^7.19.1",
       "@babel/plugin-proposal-decorators": "^7.19.1",
       "@babel/preset-env": "^7.19.1",
       "@babel/preset-typescript": "^7.18.6",
