@@ -28,17 +28,17 @@ jobs:
         with:
           node-version: 16
           
-      - name: Install Dependecies
-      - run: yarn 
+      - name: Install Dependencies
+        run: yarn 
       
       - name: Build
         run: yarn build
         
-      - uses: actions/checkout@master
+      - uses: appleboy/set-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
-          key:  ${{secrets.SSH_KEY}}
+          key:  ${{ secrets.SSH_KEY }}
           source: "., !node_modules"
           target: "test"
