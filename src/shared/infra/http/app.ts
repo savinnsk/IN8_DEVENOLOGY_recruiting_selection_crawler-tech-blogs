@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import * as express from "express"
+const express = require('express')
 import {router} from "./routes"
 
 import * as nunjucks from "nunjucks"
