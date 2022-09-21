@@ -21,20 +21,21 @@ class CreateBookMarkUseCase {
 
        if(link == "https://devgo.com.br/" || link == "https://devgo.com.br"){
         
-            const blogsFromDevGo = await crawlerWebBlog(link);
+               try{
+                const blogsFromDevGo = await crawlerWebBlog(link);
 
-            for(let i = 1 ;  i < blogsFromDevGo.length ; i++){
-                
-                await this.bookmarksLinksRepository.create(
-                    user_id , 
-                    blogsFromDevGo[i].title, 
-                    blogsFromDevGo[i].link)
+                for(let i = 1 ;  i < blogsFromDevGo.length ; i++){
 
-            }            
-       }else{
+                    await this.bookmarksLinksRepository.create(
+                        user_id , 
+                        blogsFromDevGo[i].title, 
+                        blogsFromDevGo[i].link)
+                }catch(err){
+                    throw new Error("Error crawler")}
+                }            
+            }else{
 
-        await this.bookmarksLinksRepository.create(user_id , label  , link)
-        }
+                 await this.bookmarksLinksRepository.create(user_id , label  , link)}
     
     
     if(!user){
