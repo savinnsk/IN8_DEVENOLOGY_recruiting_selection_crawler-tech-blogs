@@ -7,7 +7,7 @@ async function crawlerWebBlog(devGoLink) {
 
  
   try{
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+  const browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
   
   const page = await browser.newPage();
   await page.goto(`${devGoLink}`);
