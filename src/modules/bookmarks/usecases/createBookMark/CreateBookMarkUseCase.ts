@@ -20,24 +20,24 @@ class CreateBookMarkUseCase {
        const user = await this.usersRepository.findById(user_id);
 
        if(link == "https://devgo.com.br/" || link == "https://devgo.com.br"){
-        
-               try{
-                   
-                    const blogsFromDevGo = await crawlerWebBlog(link);
+    
+            const blogsFromDevGo = await crawlerWebBlog(link);
 
-                    for(let i = 1 ;  i < blogsFromDevGo.length ; i++){
+            try{
+                for(let i = 1 ;  i < blogsFromDevGo.length ; i++){
 
                         await this.bookmarksLinksRepository.create(
                         user_id , 
                         blogsFromDevGo[i].title, 
-                        blogsFromDevGo[i].link)
+                        blogsFromDevGo[i].link)}   
                         
-                  }catch{
-                    throw new Error("Error crawler")}
-                }           
-            }else{
+                }catch{
 
-                 await this.bookmarksLinksRepository.create(user_id , label  , link)}
+                    throw new Error()
+                }        
+                    }else{
+
+                        await this.bookmarksLinksRepository.create(user_id , label  , link)}
     
     
     if(!user){
