@@ -1,5 +1,5 @@
 import { inject, injectable } from "tsyringe";
-import { crawlerWebBlog } from "../../../../shared/services/puppeteer";
+import { crawlerWebBlog} from "../../../../shared/services/puppeteer";
 import { IUsersRepository } from "../../../users/interfaces/IUsersRepository";
 import { Bookmark } from "../../infra/entity/Bookmark";
 import { IBookmarksRepository } from "../../interfaces/IBookmarksLinksRepository";
@@ -15,9 +15,13 @@ class CreateBookMarkUseCase {
         private usersRepository : IUsersRepository
     ){}
 
-    async execute(user_id: string  , link : string , label : string ) : Promise<Bookmark[]>{
+    async execute(user_id: string  , label : string , link : string ) : Promise<Bookmark[]>{
 
        const user = await this.usersRepository.findById(user_id);
+
+
+       const result = await crawlerWebBlog(link);
+       console.log(result)
 
         if(!user){
             throw new Error("User doesn't exists")
