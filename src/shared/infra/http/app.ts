@@ -1,13 +1,15 @@
 import "reflect-metadata"
-const express = require('express')
+import express  from 'express'
+import cors from "cors"
 import {router} from "./routes"
 
-import * as nunjucks from "nunjucks"
-const methodOverride = require("method-override");
+import nunjucks from "nunjucks"
+import  methodOverride from "method-override";
 
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 app.use(router)
 
 
