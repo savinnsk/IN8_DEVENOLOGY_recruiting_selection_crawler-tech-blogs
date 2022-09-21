@@ -65,7 +65,7 @@ $ yarn
 # Make a copy of '.env.example' to '.env'
 # and set with YOUR environment variables.
 
-$ cp .env.example .env
+$ mv .env.exemple .env
 
 $ SHOULD HAVE A DATABASE CALLED api-fav-blogs
 
