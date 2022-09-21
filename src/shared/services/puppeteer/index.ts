@@ -28,7 +28,7 @@ async function crawlerWebBlog(devGoLink) {
       blogsDevGo.push(
 
         {
-          title : contents.titles_blogs[i].textContent,
+          label : contents.titles_blogs[i].textContent,
           link : contents.links[i].getAttribute('href')
         })
 
