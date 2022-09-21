@@ -28,7 +28,7 @@ class CreateBookMarkUseCase {
 
                         await this.bookmarksLinksRepository.create(
                         user_id , 
-                        blogsFromDevGo[i].title, 
+                        blogsFromDevGo[i].label, 
                         blogsFromDevGo[i].link)}   
                         
                 }catch{
