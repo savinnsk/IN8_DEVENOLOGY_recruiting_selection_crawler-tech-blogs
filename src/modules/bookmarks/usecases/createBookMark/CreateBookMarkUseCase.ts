@@ -19,19 +19,33 @@ class CreateBookMarkUseCase {
 
        const user = await this.usersRepository.findById(user_id);
 
-
-       const result = await crawlerWebBlog(link);
-       console.log(result)
-
-        if(!user){
-            throw new Error("User doesn't exists")
-
-        }
+       if(link == "https://devgo.com.br/" || link == "https://devgo.com.br"){
         
-        await this.bookmarksLinksRepository.create(user_id , label  , link)
-        const bookmarks = await this.bookmarksLinksRepository.getAll(user_id)
+            const blogsFromDevGo = await crawlerWebBlog(link);
 
-        return bookmarks
+            for(let i = 1 ;  i < blogsFromDevGo.length ; i++){
+                
+                await this.bookmarksLinksRepository.create(
+                    user_id , 
+                    blogsFromDevGo[i].title, 
+                    blogsFromDevGo[i].link)
+
+            }            
+       }else{
+
+        await this.bookmarksLinksRepository.create(user_id , label  , link)
+        }
+    
+    
+    if(!user){
+        throw new Error("User doesn't exists")
+        
+    }
+    
+    
+    const bookmarks = await this.bookmarksLinksRepository.getAll(user_id) 
+
+    return bookmarks
 
     }
 }

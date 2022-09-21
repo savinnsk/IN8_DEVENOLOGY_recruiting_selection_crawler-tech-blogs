@@ -15,4 +15,9 @@ viewRoutes.get("/users/login" , (request : Request ,  response : Response ) =>{
     response.render("users/login")
 })
 
+viewRoutes.get("/bookmarks/create" , (request : Request ,  response : Response ) =>{
+    response.render("bookmarks/create")
+})
+
+
 export {viewRoutes}

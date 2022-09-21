@@ -5,7 +5,6 @@ import puppeteer from "puppeteer"
 
 async function crawlerWebBlog(devGoLink) {
 
-  let blogsDevGo  = [] 
  
   try{
   const browser = await puppeteer.launch();
@@ -15,7 +14,10 @@ async function crawlerWebBlog(devGoLink) {
 
 
    const allBlogsDevGO = await page.evaluate(() => {
-    
+
+    let blogsDevGo  = [] 
+
+
     let contents = {
       titles_blogs: document.querySelectorAll(".blog-article-card-title"),
       links : document.querySelectorAll(".blog-article-card-cover")
@@ -26,15 +28,15 @@ async function crawlerWebBlog(devGoLink) {
       blogsDevGo.push(
 
         {
-          title : contents.titles_blogs[i].innerHTML,
+          title : contents.titles_blogs[i].textContent,
           link : contents.links[i].getAttribute('href')
-        }
-      )
+        })
 
     }
     
-    return contents 
+    return blogsDevGo 
     
+
   });
 
 

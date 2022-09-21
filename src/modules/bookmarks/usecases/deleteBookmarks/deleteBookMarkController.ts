@@ -19,7 +19,7 @@ class DeleteBookmarkController {
             statusCode: 201,
             message:"bookmark was deleted with success" 
         }
-          return response.render("bookmarks/create")
+          return response.redirect("/bookmarks/create")
 
     }catch{
         return response.status(400).send(new Error("Server Error"))
