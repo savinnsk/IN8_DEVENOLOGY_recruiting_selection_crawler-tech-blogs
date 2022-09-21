@@ -1,8 +1,13 @@
 # api-fav-links
 
+# [Acess the aplication link (deploy )](https://deploy.savinnsk.com/)
+
 **description:** api created to make a bookmark for technologies links
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=api-FavLinks&uri=https%3A%2F%2Fgithub.com%2Fsavinnsk%2Fapi-fav-blog-links%2Fblob%2Fmain%2Finsomia.json)
+
+
+
 
 ### status : (developing)
 
@@ -11,12 +16,25 @@
 - [ExpressJs](https://expressjs.com/)
 - [Docker](https://www.docker.com/)
 - [NodeJS](https://nodejs.org/pt-br/)
-- [TypeOrm]
+- TypeOrm
 - [Postgres-Sql](https://www.postgresql.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Jwt]
-- [tsrynge]
-- [Jest]
+- Jwt
+- tsrynge
+- github actions CI/CD
+- babel
+- NGIX
+- AWS cloud
+- PM2 
+- router53
+- certbot 
+- google domain
+
+* The Aplication is hosted at AWS CLOUD ubunto 20.04 instance
+* The Data Base postgres is running in a docker instance
+* The Application has a certificate https from certbot
+* The applicaiton has continious integration and continuous delivery CI/CD
+
 
 ## How to Download and Run the project
 
@@ -108,28 +126,6 @@ method: **POST**
 ```
 
 
-**Success Response:**
-
-
-```zsh
-- code:  200
-
-- content: {
-    - message of success
-    }
-```
-
-**Bad Response:**
-
-```zsh
-
-- code : 400
-
-- content: {
-    - message of failure 
-    }
-```
-
 ### Authentication user
 
 
@@ -146,30 +142,6 @@ method: **POST**
     - name : string 
     - password : string     
 }
-```
-
-**Success Response:**
-
-
-```zsh
-
-- code:  200
-
-- content: {
-    - token authentication
-    - message of success
-    }
-```
-
-**Bad Response:**
-
-```zsh
-
-- code : 400
-
-- content: {
-    - message of failure 
-    }
 ```
 
 ## Bookmarks endpoint
@@ -203,28 +175,6 @@ __Authentication required__
     }     
 ```
 
-**Success Response:**
-
-```zsh
-- code:  201
-
-- content: {
-    - message of success
-    }
-
-```
-
-**Bad Response:**
-
-
-```zsh
-- code : 400
-
-- content: {
-    - message of failure 
-    }
-
-```
 
 ### Delete a bookmark
 
@@ -256,28 +206,7 @@ __Authentication required__
     - property : id    
 ```
 
-**Success Response:**
 
-```zsh
-- code:  201
-
-- content: {
-    - message of success
-    }
-
-```
-
-**Bad Response:**
-
-
-```zsh
-- code : 400
-
-- content: {
-    - message of failure 
-    }
-
-```
 
 ## Edit a bookmark
 
@@ -313,29 +242,8 @@ __Authentication required__
 
 ```
 
-**Success Response:**
 
-```zsh
-- code:  201
-
-- content: {
-    - message of success
-    }
-
-```
-
-**Bad Response:**
-
-```zsh
-- code : 400
-
-- content: {
-    - message of failure 
-    }
-
-```
-
-**Get All bookmarks**
+##Get All bookmarks
 
 **endpoint: http://localhost:5000/bookmarks/list**
 
@@ -352,28 +260,6 @@ __Authentication required__
     -type : jsonwebtoken     
 ```
 
-**Success Response:**
-
-```zsh
-- code:  201
-
-
-- content: {
-    - message of success (all bookmarks)
-    }
-
-```
-
-**Bad Response:**
-
-```zsh
-
-- code : 400
-
-- content: {
-    - message of failure 
-    }
-```
 
 **Developed for:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
 
