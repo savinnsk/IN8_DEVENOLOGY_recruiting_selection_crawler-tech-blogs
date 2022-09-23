@@ -1,0 +1,62 @@
+
+.bookmarks {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    margin: 1rem;
+}
+
+
+.create-button-form {
+
+    background-color: var(--yellow500);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    padding: 1rem;
+    margin: 1rem 0 0 9.5rem;
+    height: 3rem;
+    width: 8rem;
+    align-content: center;
+    transition: 0.2s;
+}
+
+
+.bookmarks button {
+
+    background-color: var(--yellow500);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    width: 8rem;
+    align-content: center;
+    transition: 0.2s;
+}
+
+button:hover {
+
+    background-color: var(--cyan500);
+}
+
+.bookmarks input {
+    padding: 1px;
+}
+
+
+
+.bookmarks form {
+    margin: 0;
+    padding: 3px;
+}
+
+.bookmarks form p  {
+    padding: 1px;
+}
+
+.bookmark-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}

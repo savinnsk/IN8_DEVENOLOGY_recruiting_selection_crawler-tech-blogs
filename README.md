@@ -249,7 +249,7 @@ __Authentication required__
 
 method: **GET**
 
-**request parms**
+**request params**
 
 ```zsh
 
