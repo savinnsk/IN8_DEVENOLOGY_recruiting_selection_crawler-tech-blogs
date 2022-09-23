@@ -245,21 +245,28 @@ __Authentication required__
 
 ##Get All bookmarks
 
-**endpoint: http://localhost:5000/bookmarks/list**
+**endpoint: https://deploy.savinnsk.com/bookmarks/list/user_id**
 
 method: **GET**
 
-__Authentication required__
-
-
-**request headers**
+**request parms**
 
 ```zsh
-- token
 
-    -type : jsonwebtoken     
+user_id
+
+  -type : string   
 ```
 
+**Response 200**
+
+```zsh
+
+Array bookmarks
+
+  -type : Object[bookmarks]
+
+```
 
 **Developed for:** [Savio Picanço Do Espirito Santo Brito](https://www.linkedin.com/in/savio-pican%C3%A7o-b739a518a/)
 
