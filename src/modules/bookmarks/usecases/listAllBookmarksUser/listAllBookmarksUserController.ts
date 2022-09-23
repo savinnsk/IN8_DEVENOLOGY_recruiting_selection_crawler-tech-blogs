@@ -7,16 +7,15 @@ class ListAllBookmarksUserController {
     async handle(request , response : Response) : Promise<Response> {
 
      try{
-        const user_id = request.user.id
-
+        const {id} = request.params
         const  listAllBookmarksUserUseCase = container.resolve(ListAllBookmarksUserUseCase)
 
-        const bookmarks = await listAllBookmarksUserUseCase.execute(user_id)
+        const bookmarks = await listAllBookmarksUserUseCase.execute(id)
 
-
-        return response.status(200).json({
-            bookmarks:bookmarks
-        })
+    
+        return response.status(200).json(
+             bookmarks 
+        )
 
     }catch{
 

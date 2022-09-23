@@ -26,6 +26,6 @@ ensureUserAuthenticated,createBookMarkController.handle)
 bookmarksRoutes.post("/delete", upload.fields([{id:'id' , token:'token' , id_bookmark : 'id_bookmark'}])  , ensureUserAuthenticated , deleteBookmarkController.handle)
 
 bookmarksRoutes.put("/edit/:id" , ensureUserAuthenticated ,editBookMarkController.handle )
-bookmarksRoutes.get("/list" , ensureUserAuthenticated , listAllBookmarksUserController.handle)
+bookmarksRoutes.get("/list/:id"  , listAllBookmarksUserController.handle)
 
 export {bookmarksRoutes}

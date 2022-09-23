@@ -22,19 +22,7 @@
         </div>
       
     </header>
-
-    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
-        <div class="save-link-form">
-            <h2>Here you can save your favorites tech-blogs<h2>
-                <h2>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></h2>
-                <h2>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></h2>
-                <input id="token" name="token" type="hidden" value="{{token}}">
-                <input id="id" name="id" type="hidden" value="{{user.id}}">
-        </div>
-
-        <button type="submit">Save ⭐</button>
-    </form>
-
+   
 
     <div class="bookmarks">
         <div class="bookmark-card">
@@ -47,8 +35,23 @@
     </div>
 
 
-    <script src="./users/scripts/createuser.js">
-    
+    <script >
+
+        async function fetchAllBookmarksUserS(){
+            const link = await fetch(`http://localhost:5000/bookmarks/list/${sessionStorage.getItem("id")}`)
+            const response  = await link.json()
+            const data = await response
+            const bookmarks = await data
+            
+                bookmarks.forEach((bookmark) => { 
+                let bookmarkDiv = document.querySelector('.bookmarks')
+                bookmarkDiv.innerHTML +=`<div class="bookmark-card"> <p>${bookmark.label}</p><p>${bookmark.link}</p><button type="submit">editar</button><button type="submit">deletar</button></div>`
+
+            })          
+        }
+
+        fetchAllBookmarksUserS()
+
     </script>
 
 

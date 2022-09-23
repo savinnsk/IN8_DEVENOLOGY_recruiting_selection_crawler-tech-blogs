@@ -20,4 +20,11 @@ viewRoutes.get("/bookmarks/create" , (request : Request ,  response : Response )
 })
 
 
+viewRoutes.get("/bookmarks" , (request , response) => {
+
+response.render("bookmarks/bookmarks")
+
+})
+
+
 export {viewRoutes}
