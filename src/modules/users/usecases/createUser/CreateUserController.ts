@@ -12,23 +12,21 @@ class CreateUserController{
 
         const createUserUseCase = container.resolve(CreateUserUseCase)
 
-        const user = await createUserUseCase.execute(name  , password , email) 
+        await createUserUseCase.execute(name  , password , email) 
 
-        if(!user){
-            return response.status(500).json({
-                statusCode:500,
-                message:"Server Error"
-            })
-        }
-
-        return  response.render("users/login")
-
+        
+        
     }catch(err){
         
-        return response.status(500).send(new Error("Server Error"))
-    }
+        return response.send({
+                statusCode:500,
+                message:"Server Error"})
 
-    }
+        }finally{
+            return  response.render("users/login")
+
+        }
+}
 }
 
 export {CreateUserController}

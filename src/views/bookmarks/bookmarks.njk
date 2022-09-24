@@ -33,7 +33,7 @@
     <script >
 
         async function fetchAllBookmarksUserS(){
-            const link = await fetch(`http://localhost:5000/bookmarks/list/${sessionStorage.getItem("id")}`)
+            const link = await fetch(`/bookmarks/list/${sessionStorage.getItem("id")}`)
             const response  = await link.json()
             const data = await response
             const bookmarks = await data
