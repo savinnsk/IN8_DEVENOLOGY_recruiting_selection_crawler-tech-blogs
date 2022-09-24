@@ -178,34 +178,23 @@ __Authentication required__
 
 ### Delete a bookmark
 
-**endpoint: http://localhost:5000/bookmarks/delete/{id}**
+**endpoint: https://deploy.savinnsk.com/bookmarks/delete/{id}**
 
 method: **DELETE**
 
-__Authentication required__
-
-
-**request headers**
-
-```zsh
-- token
-
-    -type : jsonwebtoken 
-```
 
 **request params**
 
 ```zsh
-- id
+- user_id
+- bookmark_id
 ```
 
-**request params**
+**Response 201**
 
-
-```zsh
-    - property : id    
-```
-
+{
+    render to page create a bookmark    
+}
 
 
 ## Edit a bookmark
