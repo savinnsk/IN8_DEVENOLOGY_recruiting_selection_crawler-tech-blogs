@@ -1,1 +1,64 @@
  {% extends "layout.njk"  %}
+
+
+ 
+ {% block head %}
+    <link rel="stylesheet" href="/bookmarks/create.css">
+    <title>FavLinks</title>
+    
+{% endblock %}
+ 
+ {% block content %}
+
+    <header>
+        <div class="createBookmark-header">
+              <h1> ⭐ {{user.name}}! save your <span>FavLinks !</span> </h1>
+              <a  href="/bookmarks">
+                    <button class="button-show-bookmarks"> bookmarks</button>
+              </a>
+        </div>
+    </header>
+
+
+    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
+
+        <div class="fieldsCreateBookmark"  >
+            <h2>Here you can save your favorites tech-blogs</p>
+            <p>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></p>
+            <p>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></p>
+            <input  id="tokenSession" name="token" type="hidden" value="{{token}}">
+            <input  id="idSession" name="id" type="hidden" value="{{user.id}}">
+             
+        </div>
+
+        <button class="create-button-form"  type="submit">Save ⭐</button>
+    </form>
+
+
+
+    <script>
+
+            let firstUserTokenSession = window.document.querySelector("#tokenSession")
+            let firstUserIdSession = window.document.querySelector("#idSession")
+
+            let tokenSessionStorage = sessionStorage.getItem("token");
+            let idSessionStorage = sessionStorage.getItem("id");
+
+            function saveDataSessionStorage(){
+                sessionStorage.setItem("token", `${firstUserTokenSession.value}`);
+                sessionStorage.setItem("id", `${firstUserIdSession.value}`)
+            }
+
+            if(firstUserTokenSession.value || firstUserIdSession.value ){
+                saveDataSessionStorage()
+            }
+            if(!firstUserIdSession.value || !firstUserTokenSession.value){
+                firstUserTokenSession.setAttribute("value", `${tokenSessionStorage}`)
+                firstUserIdSession.setAttribute("value", `${idSessionStorage}`)
+                 
+            }
+
+    </script>
+
+
+     {% endblock %}
