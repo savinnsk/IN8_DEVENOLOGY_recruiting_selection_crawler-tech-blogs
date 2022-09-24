@@ -26,12 +26,7 @@
 
     <div class="bookmarks">
         <div class="bookmark-card">
-            <p>name</p>
-            <p>link</p>
-            <button type="submit">editar</button>
-            <button type="submit">deletar</button>
         </div>
-        
     </div>
 
 
@@ -45,9 +40,8 @@
             
                 bookmarks.forEach((bookmark) => { 
                 let bookmarkDiv = document.querySelector('.bookmarks')
-                bookmarkDiv.innerHTML +=`<div class="bookmark-card"> <p>${bookmark.label}</p><p>${bookmark.link}</p><button type="submit">editar</button><button type="submit">deletar</button></div>`
-
-            })          
+                bookmarkDiv.innerHTML +=`<form  method="POST" action="/bookmarks/delete/${bookmark.id}/${bookmark.user_id}"  enctype="multipart/form-data"><p>${bookmark.label}</p><p>${bookmark.link}</p><a href="/bookmarks/edit/${bookmark.id}" ><button type="submit">editar</button></a> <button type="submit">deletar</button></div></form>`
+})          
         }
 
         fetchAllBookmarksUserS()

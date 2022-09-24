@@ -14,7 +14,7 @@ class DeleteBookMarkUseCase{
     ){}
 
 
-    async execute(user_id : string , bookmark_id : string) : Promise<Bookmark[]> {
+    async execute(user_id : string , bookmark_id : string) : Promise<void> {
 
         const bookmark = await this.bookmarksRepository.findById(bookmark_id);
         const user = await this.usersRepository.findById(user_id);
@@ -26,10 +26,7 @@ class DeleteBookMarkUseCase{
         if(!bookmark || user.id != bookmark.user_id){
             throw new Error("Bookmark invalid")
         }
-        const bookmarks = await this.bookmarksRepository.getAll(user_id)
         await this.bookmarksRepository.delete(bookmark_id)
-
-        return bookmarks
     }
 }
 
