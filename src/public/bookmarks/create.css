@@ -42,6 +42,17 @@ input {
     transition: 0.2s;
 }
 
+.button-show-bookmarks {
+
+    background-color: var(--yellow500);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    height: 3rem;
+    width: 8rem;
+
+    transition: 0.2s;
+}
 
 .bookmarks button {
 
@@ -81,5 +92,26 @@ button:hover {
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
+}
+
+
+ a{
+
+        display: inline-block;
+        position: relative;
+        padding: 0 0.5rem;
+        line-height : 5rem ;
+        transition : 0.2s;
+          
+}
+
+
+a + a {
+    margin-left:2rem ;
+}
+
+a:hover{
+  color : var(--yellow500);
+  font-weight: bold;
 }
 

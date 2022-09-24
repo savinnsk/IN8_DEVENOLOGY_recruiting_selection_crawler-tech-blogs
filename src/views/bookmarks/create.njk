@@ -12,6 +12,9 @@
     <header>
         <div class="createBookmark-header">
               <h1> ⭐ {{user.name}}! save your <span>FavLinks !</span> </h1>
+              <a  href="/bookmarks">
+                    <button class="button-show-bookmarks"> bookmarks</button>
+              </a>
         </div>
     </header>
 
@@ -30,43 +33,12 @@
         <button class="create-button-form"  type="submit">Save ⭐</button>
     </form>
 
-    <h1>My FavLinks</h1>
 
-    <div class="bookmarks">
-         {% for bookmark in bookmarks %}
-            <div  class="bookmark-card">
-
-            <div class="header-card">
-                <h2>{{bookmark.label}}</h2>
-                <p>{{bookmark.link}}</p>
-            </div>    
-            
-
-            <div class="forms">
-                <form method="GET" action="edit/" enctype="multipart/form-data">
-                    <button type="submit">editar</button>
-                </form>
-
-                <form  method="POST" action="/bookmarks/delete" enctype="multipart/form-data">
-                    <input value="{{bookmark.id}}" name="id_bookmark" type="hidden">
-                    <input id="tokenUser" name="token" type="hidden" value="{{token}}">
-                    <input id="idUser" name="id" type="hidden" value="{{user.id}}">
-                    <button type="submit">deletar</button>
-                </form>
-        </div>
-            
-        </div>
-        {% endfor %}
-    </div>
 
     <script>
 
             let firstUserTokenSession = window.document.querySelector("#tokenSession")
             let firstUserIdSession = window.document.querySelector("#idSession")
-
-
-            let bookmarksUserToken = window.document.querySelectorAll("#tokenUser");
-            let bookmarksUserId = window.document.querySelectorAll("#idUser");
 
             let tokenSessionStorage = sessionStorage.getItem("token");
             let idSessionStorage = sessionStorage.getItem("id");
@@ -83,16 +55,6 @@
                 firstUserTokenSession.setAttribute("value", `${tokenSessionStorage}`)
                 firstUserIdSession.setAttribute("value", `${idSessionStorage}`)
                  
-            }
-            if(!bookmarksUserId[0].value || !bookmarksUserToken[0].value){
-                
-                   for(i = 0 ; i < bookmarksUserId.length ; i++ ){
-
-                        bookmarksUserToken[i].setAttribute("value", `${tokenSessionStorage}`)
-                        bookmarksUserId[i].setAttribute("value", `${idSessionStorage}`)
-
-                   }        
-                
             }
 
     </script>

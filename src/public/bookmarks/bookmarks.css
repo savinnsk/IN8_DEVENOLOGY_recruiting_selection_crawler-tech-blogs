@@ -6,21 +6,6 @@
 }
 
 
-.create-button-form {
-
-    background-color: var(--yellow500);
-    color: white;
-    font-weight: bold;
-    border-radius: 5rem;
-    padding: 1rem;
-    margin: 1rem 0 0 9.5rem;
-    height: 3rem;
-    width: 8rem;
-    align-content: center;
-    transition: 0.2s;
-}
-
-
 .bookmarks button {
 
     background-color: var(--yellow500);
@@ -60,3 +45,5 @@ button:hover {
     padding: 1rem;
     margin: 1rem;
 }
+
+
