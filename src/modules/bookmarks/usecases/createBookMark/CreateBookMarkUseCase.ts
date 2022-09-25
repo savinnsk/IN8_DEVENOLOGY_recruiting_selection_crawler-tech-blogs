@@ -29,7 +29,7 @@ class CreateBookMarkUseCase {
                         await this.bookmarksLinksRepository.create(
                         user_id , 
                         blogsFromDevGo[i].label, 
-                        blogsFromDevGo[i].link)}   
+                        "https://devgo.com.br" + blogsFromDevGo[i].link)}   
                         
                 }catch{
 
