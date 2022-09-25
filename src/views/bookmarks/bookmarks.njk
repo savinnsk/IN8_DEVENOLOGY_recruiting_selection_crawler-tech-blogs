@@ -41,15 +41,19 @@
                 let bookmarkDiv = document.querySelector('.bookmarks')
                 
                 let formDiv = `
-                <form  method="POST" action="/bookmarks/delete/${bookmark.id}/${bookmark.user_id}" enctype="multipart/form-data">
-                <p>${bookmark.label}</p>
-                <p>${bookmark.link}</p>
-                <a href="/bookmarks/edit/${bookmark.id}" >
-                <button type="submit">editar</button></a>
-                <button type="submit">deletar</button></div></form>`
-                
+                <div class="bookmark-card">
+                    <form  method="POST" action="/bookmarks/delete/${bookmark.id}/${bookmark.user_id}" enctype="multipart/form-data">
+                        <p>${bookmark.label}</p>
+                        <p>${bookmark.link}</p>
+                        <a href="/bookmarks/edit/?id=${bookmark.id}">
+                            <input class="edit-button" value="editar" type="button"></input>
+                        </a>
+                        <button type="submit">deletar</button></div>
+                    </form>
+                </div>
+                `
                 bookmarkDiv.innerHTML +=formDiv
-})          
+                })          
         }
 
         fetchAllBookmarksUserS()

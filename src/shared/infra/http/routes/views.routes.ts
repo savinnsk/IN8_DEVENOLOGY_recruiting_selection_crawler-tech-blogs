@@ -27,4 +27,8 @@ response.render("bookmarks/bookmarks")
 })
 
 
+viewRoutes.get("/bookmarks/edit/" ,(request , response) => {
+    response.render("bookmarks/edit")
+})
+
 export {viewRoutes}

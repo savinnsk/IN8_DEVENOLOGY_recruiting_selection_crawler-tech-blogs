@@ -6,7 +6,7 @@
 }
 
 
-.bookmarks button {
+.bookmarks button , .edit-button {
 
     background-color: var(--yellow500);
     color: white;
@@ -16,6 +16,18 @@
     align-content: center;
     transition: 0.2s;
 }
+
+ .edit-button {
+
+    background-color: var(--yellow500);
+    color: white;
+    font-weight: bold;
+    border-radius: 5rem;
+    width: 8rem;
+    align-content: center;
+    transition: 0.2s;
+}
+
 
 button:hover {
 
@@ -38,8 +50,6 @@ button:hover {
 }
 
 .bookmark-card{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     border: 1px solid gray;
     border-radius: 10px;
     padding: 1rem;

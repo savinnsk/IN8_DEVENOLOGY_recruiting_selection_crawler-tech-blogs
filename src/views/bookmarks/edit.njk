@@ -20,43 +20,51 @@
     </header>
 
 
-    <form  method="POST" action="/bookmarks/create"  enctype="multipart/form-data">
-
-        <div class="fieldsCreateBookmark"  >
-            <h2>Here you can save your favorites tech-blogs</p>
-            <p>title : <input placeholder="eg: Name/Label Blog" type="text" name="label"></p>
-            <p>link : <input placeholder="eg:http://example.com.br" type="text" name="link"></p>
-            <input  id="tokenSession" name="token" type="hidden" value="{{token}}">
-            <input  id="idSession" name="id" type="hidden" value="{{user.id}}">
+    <form  method="POST" action="/bookmarks/edit"  enctype="multipart/form-data">
+        <div class="bookmark"  >
              
         </div>
 
-        <button class="create-button-form"  type="submit">Save ⭐</button>
-    </form>
-
-
-
     <script>
 
-            let firstUserTokenSession = window.document.querySelector("#tokenSession")
-            let firstUserIdSession = window.document.querySelector("#idSession")
+      
 
-            let tokenSessionStorage = sessionStorage.getItem("token");
-            let idSessionStorage = sessionStorage.getItem("id");
 
-            function saveDataSessionStorage(){
-                sessionStorage.setItem("token", `${firstUserTokenSession.value}`);
-                sessionStorage.setItem("id", `${firstUserIdSession.value}`)
-            }
+        async function fetchBookmark(){
+              let params = new URL(document.location).searchParams;
+        
+            let bookmark_id = params.get("id");
 
-            if(firstUserTokenSession.value || firstUserIdSession.value ){
-                saveDataSessionStorage()
-            }
-            if(!firstUserIdSession.value || !firstUserTokenSession.value){
-                firstUserTokenSession.setAttribute("value", `${tokenSessionStorage}`)
-                firstUserIdSession.setAttribute("value", `${idSessionStorage}`)
-                 
-            }
+            const link = await fetch(`/bookmarks/list/${sessionStorage.getItem("id")}`)
+            const response  = await link.json()
+            const data = await response
+            const bookmarks = await data
+
+               let bookmark = bookmarks.find((bookmark) => {          
+                     if(bookmark.id == bookmark_id){
+                        return bookmark
+                     }             
+                })
+                
+    
+               let formDiv = `
+               <form  method="POST" action="/bookmarks/edit/${bookmark.id}/${bookmark.user}"  enctype="multipart/form-data">
+                    <div class="bookmark-card">
+                            <input name="label" value="${bookmark.label}"></input>
+                            <input name="link" value="${bookmark.link}"></input>
+                    <button class="create-button-form"  type="submit">Save ⭐</button>
+                    </div>
+                </form>
+
+                `
+             bookmarkDiv = document.querySelector('.bookmark') 
+             bookmarkDiv.innerHTML +=formDiv
+               
+        }
+
+        fetchBookmark()
+
+       
 
     </script>
 
