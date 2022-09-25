@@ -20,7 +20,7 @@
     </header>
 
 
-    <form  method="POST" action="/bookmarks/edit"  enctype="multipart/form-data">
+    
         <div class="bookmark"  >
              
         </div>
@@ -48,7 +48,7 @@
                 
     
                let formDiv = `
-               <form  method="POST" action="/bookmarks/edit/${bookmark.id}/${bookmark.user}"  enctype="multipart/form-data">
+               <form  method="POST" action="/bookmarks/edit/${bookmark.id}/${bookmark.user_id}"  enctype="multipart/form-data">
                     <div class="bookmark-card">
                             <input name="label" value="${bookmark.label}"></input>
                             <input name="link" value="${bookmark.link}"></input>

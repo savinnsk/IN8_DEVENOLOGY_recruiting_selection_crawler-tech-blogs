@@ -4,7 +4,7 @@ import { EditBookMarkUseCase } from "./EditBookMarkUseCase";
 
 class EditBookMarkController{
 
-    async handle(request , response : Response) : Promise<Response>{
+    async handle(request , response : Response) : Promise<any>{
 
         const {user_id} = request.params
         const {bookmark_id} = request.params
@@ -14,9 +14,16 @@ class EditBookMarkController{
 
         await editBookMarkUseCase.execute(user_id , bookmark_id , label , link)
 
-        return response.status(201).json({
+
+          const responseJson = {
+            statusCode : 200,
             message:`${link} was edited with success`
-        })
+        }
+         return response.render("bookmarks/bookmarks")
+
+      
+
+       
     }
 }
 
