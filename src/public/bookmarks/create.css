@@ -44,7 +44,6 @@ input {
 
 .button-show-bookmarks {
 
-    background-color: var(--yellow500);
     color: white;
     font-weight: bold;
     border-radius: 5rem;

@@ -1,9 +1,15 @@
 
+
+
+
+
+
+
 .bookmarks {
-    display: grid;
-    grid-template-columns: 400px 400px 400px;
     margin: 1rem;
 }
+
+
 
 
 .bookmarks button , .edit-button {
@@ -24,7 +30,6 @@
     font-weight: bold;
     border-radius: 5rem;
     width: 8rem;
-    align-content: center;
     transition: 0.2s;
 }
 
@@ -52,8 +57,21 @@ button:hover {
 .bookmark-card{
     border: 1px solid gray;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 2rem;
     margin: 1rem;
 }
 
+form {
 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title-my-blogs{
+    padding: 2rem;
+}
+
+
+.link-blog{
+    color: var(--yellow500);
+}

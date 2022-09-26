@@ -4,18 +4,19 @@
  
  {% block head %}
     <link rel="stylesheet" href="/bookmarks/create.css">
+   <link rel="stylesheet" href="/main.css">
     <title>FavLinks</title>
     
 {% endblock %}
  
  {% block content %}
 
-    <header>
-        <div class="createBookmark-header">
-              <h1> ⭐ {{user.name}}! save your <span>FavLinks !</span> </h1>
-              <a  href="/bookmarks">
-                    <button class="button-show-bookmarks"> bookmarks</button>
-              </a>
+     <header>
+        <div class="header-container">
+            <div class="links">
+                <a href="/bookmarks/">⭐Meus BlogDev</a>
+                 <a href="/">⭐logout</a>
+            </div>
         </div>
     </header>
 

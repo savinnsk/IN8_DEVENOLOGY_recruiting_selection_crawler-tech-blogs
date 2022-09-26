@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/bookmarks/bookmarks.css">
   
-    <title>FavLinks</title>
+    <title>BlogDev</title>
     
 {% endblock %}
  
@@ -14,15 +14,16 @@
  
  {% block content %}
  
- <header>
+    <header>
         <div class="header-container">
             <div class="links">
-                 <h1>⭐ Hi again {{user.name}}! to <span>FavLinks !</span> </h1>
+                <a href="/bookmarks/create">⭐Criar BlogDev</a>
+                 <a href="/">⭐logout</a>
             </div>
         </div>
-      
     </header>
    
+    <h1 class="title-my-blogs">Seus blogs de tecnologia</h1>
 
     <div class="bookmarks">
        
@@ -43,12 +44,17 @@
                 let formDiv = `
                 <div class="bookmark-card">
                     <form  method="POST" action="/bookmarks/delete/${bookmark.id}/${bookmark.user_id}" enctype="multipart/form-data">
-                        <p>${bookmark.label}</p>
-                        <p>${bookmark.link}</p>
-                        <a href="/bookmarks/edit/?id=${bookmark.id}">
-                            <input class="edit-button" value="editar" type="button"></input>
-                        </a>
-                        <button type="submit">deletar</button></div>
+                        <div>
+                            <p>${bookmark.label}</p>
+                            <a class ="link-blog">${bookmark.link}</a>
+                        </div>                         
+                        <div>
+                            <a href="/bookmarks/edit/?id=${bookmark.id}">
+                                <input class="edit-button" value="editar" type="button"></input>
+                            </a>
+                            <button type="submit">deletar</button></div>
+                        </div>
+                        
                     </form>
                 </div>
                 `

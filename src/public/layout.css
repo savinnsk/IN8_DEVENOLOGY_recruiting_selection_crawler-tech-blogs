@@ -24,11 +24,22 @@
     }
 }
 
-@media (max-width : 720px){
+@media (max-width : 500px){
 
     html{
-        font-size : 87.5% 
+        font-size : 87.5% ;
+        width: 500px;
     }
+}
+
+
+
+@media (max-width : 500px){
+
+    body{
+        width: 500px;
+    }
+
 }
 
 body {
