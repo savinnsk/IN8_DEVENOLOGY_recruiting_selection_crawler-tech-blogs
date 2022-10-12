@@ -121,7 +121,8 @@ method: **POST**
 - properties : {
 
     - name : string 
-    - password : string     
+    - password : string
+    - email: string     
 }
 ```
 
