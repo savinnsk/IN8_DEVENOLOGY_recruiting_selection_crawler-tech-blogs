@@ -5,8 +5,7 @@ import {router} from "./routes"
 
 import nunjucks from "nunjucks"
 import  methodOverride from "method-override";
-const swaggerConf = require("swagger-ui-express");
-import swaggerFile from "../../../../swagger.json"
+
 
 const corsOptions ={
   origin:'*', 
@@ -16,7 +15,6 @@ const corsOptions ={
 const app = express();
 
 app.use(express.json());
-app.use("/api-docs",swaggerConf.serve,swaggerConf.setup(swaggerFile));
 app.use(cors(corsOptions)) // Use this after the variable declaration
 app.use(router)
 app.use(methodOverride("_method"))
