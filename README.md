@@ -1,10 +1,10 @@
-# api-fav-links
+# Crawler Your Favorite TechBlogs Websites
 
 
 ## The site is down for a moment due to costs to keep in AWS CLOULD
 ### [Acess the aplication link (deploy )](https://deploy.savinnsk.com/)
 
-**description:** api created to make a bookmark for technologies links
+**description:** This aplication can get all headlines, paragraphs, links from othes blogs techs, now is only working in https://devgo.com.br
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=api-FavLinks&uri=https%3A%2F%2Fgithub.com%2Fsavinnsk%2Fapi-fav-blog-links%2Fblob%2Fmain%2Finsomia.json)
 
@@ -31,6 +31,7 @@
 - router53
 - certbot 
 - google domain
+- puppeteer
 
 * The Aplication is hosted at AWS CLOUD ubunto 20.04 instance
 * The Data Base postgres is running in a docker instance
